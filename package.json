@@ -47,6 +47,7 @@
     "dependencies": {
         "@types/js-cookie": "^3.0.3",
         "isbot": "^3.7.0",
+        "canvas-sketch": "^0.7.7",
         "js-cookie": "^3.0.5",
         "jszip": "^3.10.1",
         "ress": "^5.0.2",
