@@ -17,7 +17,7 @@ export default class CanvasSketchProject extends Project {
     ignoreKeys = ['settings', 'manager'];
     manager: CanvasSketchManager;
     settings = {
-        pixelsPerInch: 300,
+        pixelRatio: window.devicePixelRatio,
         units: 'in',
         resizeCanvas: true,
         animate: true,
