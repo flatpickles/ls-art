@@ -1,0 +1,81 @@
+{
+    "title": "Aurora Vibes",
+    "date": "2/15/2023",
+    "description": "A washy aurora sorta thing, mixing between colors with a series of offset noise functions. Whatever you're looking for, maybe it's in here somewhere.",
+    "params": {
+        "timeScale": {
+            "name": "Time Scale",
+            "min": 0.0,
+            "max": 1.0
+        },
+        "xScale": {
+            "name": "X Scale",
+            "min": 0.01,
+            "max": 10.0
+        },
+        "yScale": {
+            "name": "Y Scale",
+            "min": 0.01,
+            "max": 10.0
+        },
+        "useSimplex": {
+            "name": "Simplex Noise"
+        },
+        "seedOffset": {
+            "name": "Noise Offset",
+            "min": 0.0,
+            "max": 3.0
+        },
+        "easing": {
+            "name": "Mix Easing",
+            "min": 0.01,
+            "max": 10.0
+        },
+        "baseColor": {
+            "name": "Base Color",
+            "style": "unitColor"
+        },
+        "mixMin1": {
+            "name": "Mix Min 1",
+            "min": -1.0,
+            "max": 1.0
+        },
+        "mixMax1": {
+            "name": "Mix Max 1",
+            "min": -1.0,
+            "max": 1.0
+        },
+        "color1": {
+            "name": "Color 1",
+            "style": "unitColor"
+        },
+        "mixMin2": {
+            "name": "Mix Min 2",
+            "min": -1.0,
+            "max": 1.0
+        },
+        "mixMax2": {
+            "name": "Mix Max 2",
+            "min": -1.0,
+            "max": 1.0
+        },
+        "color2": {
+            "name": "Color 2",
+            "style": "unitColor"
+        },
+        "mixMin3": {
+            "name": "Mix Min 3",
+            "min": -1.0,
+            "max": 1.0
+        },
+        "mixMax3": {
+            "name": "Mix Max 3",
+            "min": -1.0,
+            "max": 1.0
+        },
+        "color3": {
+            "name": "Color 3",
+            "style": "unitColor"
+        }
+    }
+}
