@@ -1,0 +1,20 @@
+{
+    "title": "Globular",
+    "values": {
+        "layerCount": 4,
+        "edgeLow": 0.07,
+        "edgeHigh": 0.85,
+        "inset": 0.16,
+        "fixedAspect": true,
+        "rounding": 1,
+        "easing": 10,
+        "noiseScaleX": 0.11,
+        "noiseScaleY": 0.23,
+        "noiseVariant": 0.46,
+        "gridResolution": 171,
+        "interpolate": true,
+        "evenSpacing": true,
+        "splineTension": 1,
+        "lineWidth": 2
+    }
+}
