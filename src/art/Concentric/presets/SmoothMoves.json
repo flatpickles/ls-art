@@ -1,0 +1,19 @@
+{
+    "title": "Smooth Moves",
+    "values": {
+        "size1": 0.25,
+        "size2": 1,
+        "thereAndBack": true,
+        "noiseVariant": 0.76,
+        "noiseDepth": 0.7,
+        "noiseDensity": 0.25,
+        "pathCount": 10,
+        "pathResolution": 50,
+        "lineWidth": 1.25,
+        "xIterations": 1,
+        "yIterations": 1,
+        "iterationGap": 0,
+        "hInset": 0,
+        "vInset": 0
+    }
+}
