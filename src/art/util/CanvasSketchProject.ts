@@ -2,7 +2,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
 
-import Project, { type Detail2D, type ParamsChangedDetail2D } from '$lib/base/Project/Project';
+import Project, {
+    CanvasType,
+    type Detail2D,
+    type ParamsChangedDetail2D,
+    type UpdateDetail
+} from '$lib/base/Project/Project';
 import canvasSketch from 'canvas-sketch';
 
 // canvas-sketch doesn't have TS definitions; these are just placeholders for now
@@ -14,15 +19,9 @@ export default class CanvasSketchProject extends Project {
     dimensions = [9, 12];
 
     // Non-param state (to be used or overridden by subclasses)
-    ignoreKeys = ['settings', 'manager'];
+    ignoreKeys = ['manager', 'animate'];
     manager: CanvasSketchManager;
-    settings = {
-        pixelRatio: window.devicePixelRatio,
-        units: 'in',
-        resizeCanvas: true,
-        animate: true,
-        hotkeys: false // todo; can we still enable save hotkey without enabling play toggling with space?
-    };
+    animate = false;
 
     // Subclasses should override this method
     sketch(initialProps: CanvasSketchProps): CanvasSketchRender {}
@@ -31,7 +30,11 @@ export default class CanvasSketchProject extends Project {
         this.manager = await canvasSketch(this.sketch.bind(this), {
             dimensions: this.dimensions,
             canvas: this.canvas,
-            ...this.settings
+            pixelRatio: window.devicePixelRatio,
+            units: 'in',
+            resizeCanvas: true,
+            animate: this.animate,
+            hotkeys: false // todo; can we still enable save hotkey without play toggling (space)?
         });
     }
 
@@ -41,7 +44,7 @@ export default class CanvasSketchProject extends Project {
 
     paramsChanged(detail: ParamsChangedDetail2D) {
         super.paramsChanged(detail);
-        if (detail.keys.includes('dimensions')) {
+        if (!this.animate || detail.keys.includes('dimensions')) {
             this.manager?.update({
                 dimensions: this.dimensions
             });
