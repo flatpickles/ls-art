@@ -1,0 +1,20 @@
+{
+    "title": "Esoterica",
+    "values": {
+        "layerCount": 10,
+        "edgeLow": 0.05,
+        "edgeHigh": 0.47,
+        "inset": 0.01,
+        "fixedAspect": false,
+        "rounding": 0.14,
+        "easing": 10,
+        "noiseScaleX": 0.5,
+        "noiseScaleY": 0.5,
+        "noiseVariant": 0.33,
+        "gridResolution": 38,
+        "interpolate": false,
+        "evenSpacing": false,
+        "splineTension": 0,
+        "lineWidth": 1
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "title": "Stack",
+    "values": {
+        "layerCount": 4,
+        "edgeLow": 0.05,
+        "edgeHigh": 0.54,
+        "inset": 0.05,
+        "fixedAspect": false,
+        "rounding": 0,
+        "easing": 10,
+        "noiseScaleX": 0.04,
+        "noiseScaleY": 0.65,
+        "noiseVariant": 0.66,
+        "gridResolution": 171,
+        "interpolate": true,
+        "evenSpacing": true,
+        "splineTension": 1,
+        "lineWidth": 1.27
+    }
+}
