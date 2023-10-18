@@ -1,0 +1,19 @@
+{
+    "title": "Splatitude",
+    "values": {
+        "size1": 0.9,
+        "size2": 0.3,
+        "thereAndBack": false,
+        "noiseVariant": 0.19,
+        "noiseDepth": 0.51,
+        "noiseDensity": 0.5,
+        "pathCount": 10,
+        "pathResolution": 70,
+        "lineWidth": 1.7,
+        "xIterations": 1,
+        "yIterations": 1,
+        "iterationGap": 0,
+        "hInset": 0,
+        "vInset": 0
+    }
+}

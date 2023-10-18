@@ -1,0 +1,19 @@
+{
+    "title": "Source Flow",
+    "values": {
+        "size1": 0.01,
+        "size2": 0.95,
+        "thereAndBack": false,
+        "noiseVariant": 0.56,
+        "noiseDepth": 0.74,
+        "noiseDensity": 0.77,
+        "pathCount": 14,
+        "pathResolution": 50,
+        "lineWidth": 1,
+        "xIterations": 1,
+        "yIterations": 1,
+        "iterationGap": 0,
+        "hInset": 0,
+        "vInset": 0
+    }
+}

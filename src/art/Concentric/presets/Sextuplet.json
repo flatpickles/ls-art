@@ -1,0 +1,19 @@
+{
+    "title": "Sextuplet",
+    "values": {
+        "size1": 0.15,
+        "size2": 0.85,
+        "thereAndBack": false,
+        "noiseVariant": 0.2,
+        "noiseDepth": 0.7,
+        "noiseDensity": 0.5,
+        "pathCount": 7,
+        "pathResolution": 50,
+        "lineWidth": 1,
+        "xIterations": 2,
+        "yIterations": 3,
+        "iterationGap": 0,
+        "hInset": 5,
+        "vInset": 5
+    }
+}

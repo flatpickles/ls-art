@@ -1,0 +1,19 @@
+{
+    "title": "Sextuplet Deux",
+    "values": {
+        "size1": 0.75,
+        "size2": 1,
+        "thereAndBack": false,
+        "noiseVariant": 0.53,
+        "noiseDepth": 1,
+        "noiseDensity": 0.2,
+        "pathCount": 5,
+        "pathResolution": 25,
+        "lineWidth": 0.75,
+        "xIterations": 2,
+        "yIterations": 3,
+        "iterationGap": 0,
+        "hInset": 5,
+        "vInset": 5
+    }
+}
