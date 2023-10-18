@@ -52,6 +52,7 @@
         "canvas-sketch": "^0.7.7",
         "canvas-sketch-util": "^1.10.0",
         "d3-path": "^3.1.0",
+        "glsl-easings": "^1.0.0",
         "js-cookie": "^3.0.5",
         "regl": "^2.1.0",
         "ress": "^5.0.2",
