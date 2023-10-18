@@ -1,0 +1,20 @@
+{
+    "title": "Chunk Yard",
+    "values": {
+        "layerCount": 5,
+        "edgeLow": 0.05,
+        "edgeHigh": 1,
+        "inset": 0.01,
+        "fixedAspect": true,
+        "rounding": 0.5,
+        "easing": 10,
+        "noiseScaleX": 0.5,
+        "noiseScaleY": 0.5,
+        "noiseVariant": 0.28,
+        "gridResolution": 100,
+        "interpolate": false,
+        "evenSpacing": false,
+        "splineTension": 1,
+        "lineWidth": 1
+    }
+}

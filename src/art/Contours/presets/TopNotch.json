@@ -1,0 +1,20 @@
+{
+    "title": "Top Notch",
+    "values": {
+        "layerCount": 4,
+        "edgeLow": 0.1,
+        "edgeHigh": 0.9,
+        "inset": 0.1,
+        "fixedAspect": true,
+        "rounding": 1,
+        "easing": 10,
+        "noiseScaleX": 0.93,
+        "noiseScaleY": 0.01,
+        "noiseVariant": 1,
+        "gridResolution": 171,
+        "interpolate": true,
+        "evenSpacing": true,
+        "splineTension": 1,
+        "lineWidth": 1.9
+    }
+}

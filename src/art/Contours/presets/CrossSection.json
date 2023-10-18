@@ -1,0 +1,20 @@
+{
+    "title": "Cross Section",
+    "values": {
+        "layerCount": 5,
+        "edgeLow": 0.1,
+        "edgeHigh": 0.9,
+        "inset": 0.1,
+        "fixedAspect": false,
+        "rounding": 0.9,
+        "easing": 10,
+        "noiseScaleX": 0.78,
+        "noiseScaleY": 0.84,
+        "noiseVariant": 0.24,
+        "gridResolution": 195,
+        "interpolate": true,
+        "evenSpacing": true,
+        "splineTension": 1,
+        "lineWidth": 1
+    }
+}
