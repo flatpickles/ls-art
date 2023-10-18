@@ -19,6 +19,7 @@
         "@sveltejs/kit": "^1.27.3",
         "@testing-library/svelte": "^4.0.3",
         "@testing-library/user-event": "^14.4.3",
+        "@types/d3-path": "^3.0.1",
         "@types/p5": "^1.7.0",
         "@types/three": "^0.165.0",
         "@typescript-eslint/eslint-plugin": "^5.45.0",
@@ -47,10 +48,16 @@
     "dependencies": {
         "@types/js-cookie": "^3.0.3",
         "isbot": "^3.7.0",
+        "alea": "^1.0.1",
+        "bezier-spline": "^2.0.0",
         "canvas-sketch": "^0.7.7",
+        "canvas-sketch-util": "^1.10.0",
+        "d3-path": "^3.1.0",
         "js-cookie": "^3.0.5",
         "jszip": "^3.10.1",
         "ress": "^5.0.2",
-        "three": "^0.165.0"
+        "three": "^0.165.0",
+        "regl": "^2.1.0",
+        "simplex-noise": "^4.0.1"
     }
 }
