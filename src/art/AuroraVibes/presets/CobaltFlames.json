@@ -1,0 +1,21 @@
+{
+    "title": "Cobalt Flames",
+    "values": {
+        "timeScale": 0.3,
+        "xScale": 6.0,
+        "yScale": 0.75,
+        "seedOffset": 0.6,
+        "useSimplex": true,
+        "baseColor": [0.3, 0.27, 0.71],
+        "mixMin1": -0.2,
+        "mixMax1": 1,
+        "color1": [1.0, 0.58, 0.0],
+        "mixMin2": -0.4,
+        "mixMax2": 0.65,
+        "color2": [1.0, 1.0, 1.0],
+        "mixMin3": -0.2,
+        "mixMax3": 0.5,
+        "color3": [0.62, 0.0, 0.0],
+        "easing": 7
+    }
+}

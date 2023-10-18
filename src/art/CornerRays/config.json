@@ -2,6 +2,7 @@
     "title": "Corner Rays",
     "date": "06/07/2023",
     "description": "Do it for the Moiré. This sketch is intended to be drawn out on large paper with a pen plotter.",
+    "groups": "Plotter Art",
     "params": {
         "dimensions": {
             "name": "Dimensions",

@@ -1,0 +1,21 @@
+{
+    "title": "Kelp Forest",
+    "values": {
+        "timeScale": 0.15,
+        "xScale": 10,
+        "yScale": 1.5,
+        "seedOffset": 1.3,
+        "useSimplex": false,
+        "baseColor": [0.03, 0.85, 0.27],
+        "mixMin1": -0.5,
+        "mixMax1": 0.5,
+        "color1": [0.37, 0.75, 0.77],
+        "mixMin2": -1.0,
+        "mixMax2": 0.4,
+        "color2": [1, 1, 1],
+        "mixMin3": 0.2,
+        "mixMax3": 0.9,
+        "color3": [0.13, 0.16, 0.33],
+        "easing": 3
+    }
+}
