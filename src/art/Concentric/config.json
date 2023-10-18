@@ -1,0 +1,10 @@
+{
+    "title": "Concentric",
+    "date": "05/14/2023",
+    "description": "Exploring new forms of continuity. Path-based generative designs, intended to be rendered to SVG and drawn mechanically with a pen plotter.",
+    "params": {
+        "dimensions": {
+            "name": "Dimensions"
+        }
+    }
+}

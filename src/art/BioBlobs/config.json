@@ -1,0 +1,12 @@
+{
+    "title": "Bio Blobs",
+    "date": "2023-05-12",
+    "description": "Port of an <a href='https://www.flatpickles.com/media/pathogen'>experiment</a> from 2020. Could use further experimentation, tweaks, parameterization, and assorted finesse.",
+    "experimental": true,
+    "params": {
+        "timeScale": {
+            "name": "Time Scale",
+            "default": 0.3
+        }
+    }
+}
