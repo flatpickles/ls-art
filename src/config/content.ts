@@ -1,12 +1,13 @@
 // Project list header content
-const title = 'Sketchbook';
+const title = 'Longitude Studio';
 const subtitle = '';
-const description = '';
+const description =
+    'A collection of algorithmic art projects, built with <a href="https://skbk.cc">Sketchbook</a>.';
 
 // Project list footer content (use empty string to omit)
-const footer = '';
+const footer = 'Copyright © 2023 <a href="https://flatpickles.com">Matt Nichols</a>';
 const leftButtonIcon = 'fa-brands fa-github';
-const leftButtonLink = 'https://github.com/flatpickles/sketchbook';
+const leftButtonLink = 'https://github.com/flatpickles/ls-art';
 
 // Show panel buttons (visible when panels are hidden)
 const projectListIcon = 'fa-solid fa-bars';

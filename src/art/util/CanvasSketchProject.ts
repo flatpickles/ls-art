@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-empty-function */
 
-import Project, { type Detail2D, type ParamChangedDetail2D } from '$lib/base/Project/Project';
+import Project, { type Detail2D, type ParamsChangedDetail2D } from '$lib/base/Project/Project';
 import canvasSketch from 'canvas-sketch';
 
 // canvas-sketch doesn't have TS definitions; these are just placeholders for now
@@ -11,7 +11,7 @@ export type CanvasSketchProps = any;
 export type CanvasSketchRender = any;
 
 export default class CanvasSketchProject extends Project {
-    dimensions = [8.5, 11];
+    dimensions = [9, 12];
 
     // Non-param state (to be used or overridden by subclasses)
     ignoreKeys = ['settings', 'manager'];
@@ -39,9 +39,9 @@ export default class CanvasSketchProject extends Project {
         this.manager?.update();
     }
 
-    paramChanged(detail: ParamChangedDetail2D) {
-        super.paramChanged(detail);
-        if (detail.key === 'dimensions') {
+    paramsChanged(detail: ParamsChangedDetail2D) {
+        super.paramsChanged(detail);
+        if (detail.keys.includes('dimensions')) {
             this.manager?.update({
                 dimensions: this.dimensions
             });
