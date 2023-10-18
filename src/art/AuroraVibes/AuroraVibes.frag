@@ -4,25 +4,24 @@ precision highp float;
 #pragma glslify: classicNoise = require(glsl-noise/classic/3d)
 
 uniform vec2 renderSize;
-uniform float seedOffset;
-uniform float scaledTime;
-uniform float xScale;
-uniform float yScale;
-uniform float easing;
-uniform bool useSimplex;
-
-uniform vec3 baseColor;
-uniform vec3 color1;
-uniform float mixMin1;
-uniform float mixMax1;
-uniform vec3 color2;
-uniform float mixMin2;
-uniform float mixMax2;
-uniform vec3 color3;
-uniform float mixMin3;
-uniform float mixMax3;
-
 varying vec2 uv;
+uniform float scaledTime;
+
+uniform float seedOffset; // 0.35
+uniform float xScale; // 1.25
+uniform float yScale; // 4.5
+uniform float easing; // 10
+uniform bool useSimplex; // false
+uniform vec3 baseColor; // [0, 0.07, 0.36]
+uniform vec3 color1; // [0.44, 0.85, 0.66]
+uniform float mixMin1; // 0.0
+uniform float mixMax1; // 1.0
+uniform vec3 color2; // [0.34, 0.4, 0.63]
+uniform float mixMin2; // 0.0
+uniform float mixMax2; // 1.0
+uniform vec3 color3; // [0.81, 0.43, 0.5]
+uniform float mixMin3; // -0.2
+uniform float mixMax3; // 0.6
 
 // Sigmoid easing adapted from:
 // https://medium.com/hackernoon/ease-in-out-the-sigmoid-factory-c5116d8abce9
