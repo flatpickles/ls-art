@@ -3,11 +3,11 @@ precision highp float;
 uniform float time;
 uniform vec2 renderSize;
 
-uniform float drainTime;
-uniform float noiseTime;
 
 uniform float spin; // -0.2, "Spin Amount", -1 to 1
+uniform float scaledTime1;
 uniform float noiseAmount; // 0.15, "Noise Amount", 0 to 1
+uniform float scaledTime2;
 uniform float noiseDensity; // 0.7, "Noise Density", 0 to 1
 uniform float noiseCycles; // 5, "Noise Cycles", 0 to 20, step 1
 uniform float colorCycles; // 7, "Color Cycles", 1 to 20, step 1
@@ -60,9 +60,9 @@ void main()	{
     float theta = atan(uv.y, uv.x) + r * spin * 3.0;
 
     // Noise calculations
-    float timeSeed = noiseTime;
+    float timeSeed = scaledTime2;
     float thetaSeed = sin(theta * noiseCycles);
-    float rSeed = r * noiseDensity * 10.0 + drainTime;
+    float rSeed = r * noiseDensity * 10.0 + scaledTime1;
     vec3 noiseSeed = vec3(timeSeed, thetaSeed, rSeed);
     float processedNoise = noiseAmount * (rainbow ? 5.0 : 20.0); // More for non-rainbow mode
     float noise = processedNoise * classicNoise(noiseSeed);
