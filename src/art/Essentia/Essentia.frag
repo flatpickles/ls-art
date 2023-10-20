@@ -12,10 +12,10 @@ uniform float noiseDensity; // 0.7, "Noise Density", 0 to 1
 uniform float noiseCycles; // 5, "Noise Cycles", 0 to 20, step 1
 uniform float colorCycles; // 7, "Color Cycles", 1 to 20, step 1
 uniform bool rainbow; // false, "Rainbow Mode"
-uniform vec3 color1; // [0.65, 0.93, 0.98], "Color 1"
-uniform vec3 color2; // [0.00, 0.05, 0.46], "Color 2"
-uniform vec3 color3; // [0.84, 0.48, 0.40], "Color 3"
-uniform vec3 centerColor; // [0.65, 0.93, 0.98], "Center Color"
+uniform vec3 color1; // #a7edfb, "Color 1"
+uniform vec3 color2; // #000e75, "Color 2"
+uniform vec3 color3; // #d77b65, "Color 3"
+uniform vec3 centerColor; // #a7edfb, "Center Color"
 uniform float centerRadius; // 0.2, "Center Radius", 0 to 1
 
 varying vec2 uv;
