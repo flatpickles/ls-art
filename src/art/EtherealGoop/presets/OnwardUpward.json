@@ -1,0 +1,15 @@
+{
+    "title": "Onward & Upward",
+    "values": {
+        "goopScale": 6,
+        "offsetX": 1,
+        "offsetY": 1,
+        "layerCount": 10,
+        "noiseEdge": 0.45,
+        "edgeTaper": 0.45,
+        "edgeSoftness": 0.02,
+        "bgColor": "#324935",
+        "bottomColor": "#00a0a3",
+        "topColor": "#ffffff"
+    }
+}

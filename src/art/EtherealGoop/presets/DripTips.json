@@ -1,0 +1,15 @@
+{
+    "title": "Drip Tips",
+    "values": {
+        "goopScale": 7.0,
+        "offsetX": 0.3,
+        "offsetY": -2,
+        "layerCount": 10,
+        "noiseEdge": 0.2,
+        "edgeTaper": -1,
+        "edgeSoftness": 0.02,
+        "bgColor": "#000000",
+        "bottomColor": "#345151",
+        "topColor": "#61f5f2"
+    }
+}
