@@ -1,0 +1,15 @@
+{
+    "title": "Flow Baby",
+    "values": {
+        "goopScale": 3,
+        "offsetX": 0,
+        "offsetY": 0,
+        "layerCount": 4,
+        "noiseEdge": 0.3,
+        "edgeTaper": -0.7,
+        "edgeSoftness": 0.02,
+        "bgColor": "#035e12",
+        "bottomColor": "#00a0a3",
+        "topColor": "#ff2ea8"
+    }
+}

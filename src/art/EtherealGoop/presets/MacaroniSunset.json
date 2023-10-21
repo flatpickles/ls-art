@@ -1,0 +1,15 @@
+{
+    "title": "Macaroni Sunset",
+    "values": {
+        "goopScale": 10,
+        "offsetX": 0.3,
+        "offsetY": 0.5,
+        "layerCount": 10,
+        "noiseEdge": 0.4,
+        "edgeTaper": -0.4,
+        "edgeSoftness": 0.4,
+        "bgColor": "#237244",
+        "bottomColor": "#dd3734",
+        "topColor": "#f3ee53"
+    }
+}

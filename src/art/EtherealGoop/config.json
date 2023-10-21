@@ -1,0 +1,11 @@
+{
+    "title": "Ethereal Goop",
+    "date": "10/29/2022",
+    "description": "Ethereal Goop is based on a noise layering <a href='https://flatpickles.com/media/ethereal-goop'>experiment</a> from 2021. This is a fresh Sketchbook version, with new features, presets, and perf improvements.",
+    "params": {
+        "timeScale": {
+            "name": "Time Scale",
+            "max": 2
+        }
+    }
+}

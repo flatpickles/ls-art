@@ -1,0 +1,15 @@
+{
+    "title": "Lava Swamp",
+    "values": {
+        "goopScale": 4.0,
+        "offsetX": -0.45,
+        "offsetY": 0.45,
+        "layerCount": 8,
+        "noiseEdge": 0.45,
+        "edgeTaper": -0.7,
+        "edgeSoftness": 0.1,
+        "bgColor": "#c22400",
+        "bottomColor": "#d12600",
+        "topColor": "#121306"
+    }
+}
