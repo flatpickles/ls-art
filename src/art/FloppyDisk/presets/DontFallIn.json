@@ -1,0 +1,16 @@
+{
+    "title": "Don't Fall In",
+    "values": {
+        "innerSize": 0.2,
+        "outerSize": 0.8,
+        "wobbleShape1": 10,
+        "wobbleFactor1": 0.06,
+        "wobbleShape2": 4,
+        "wobbleFactor2": 0.07,
+        "centerColor": "#042f2a",
+        "color1": "#008f7e",
+        "color2": "#3bcebd",
+        "color3": "#042f2a",
+        "backgroundColor": "#b3fff6"
+    }
+}
