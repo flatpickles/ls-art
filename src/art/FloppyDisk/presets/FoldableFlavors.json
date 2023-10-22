@@ -1,0 +1,16 @@
+{
+    "title": "Foldable Flavors",
+    "values": {
+        "innerSize": 0.3,
+        "outerSize": 0.8,
+        "wobbleShape1": 7,
+        "wobbleFactor1": 0.05,
+        "wobbleShape2": 9,
+        "wobbleFactor2": 0.02,
+        "centerColor": "#1db408",
+        "color1": "#f3ff4d",
+        "color2": "#f13c01",
+        "color3": "#883a21",
+        "backgroundColor": "#d9f5d6"
+    }
+}

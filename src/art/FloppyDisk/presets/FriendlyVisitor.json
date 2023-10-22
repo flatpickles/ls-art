@@ -1,0 +1,16 @@
+{
+    "title": "A Friendly Visitor",
+    "values": {
+        "innerSize": 0.35,
+        "outerSize": 0.7,
+        "wobbleShape1": 7,
+        "wobbleFactor1": 0.05,
+        "wobbleShape2": 3,
+        "wobbleFactor2": 0.1,
+        "centerColor": "#000000",
+        "color1": "#ffffff",
+        "color2": "#ffffff",
+        "color3": "#000000",
+        "backgroundColor": "#ff8585"
+    }
+}
