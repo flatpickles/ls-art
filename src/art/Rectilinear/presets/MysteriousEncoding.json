@@ -1,0 +1,17 @@
+{
+    "title": "Mysterious Encoding",
+    "values": {
+        "fillWidth": 1,
+        "fillHeight": 0.15,
+        "horizontalBorderSize": 0,
+        "verticalBorderSize": 12,
+        "borderColor": "#d9f3f7",
+        "primaryColor": "#211d4e",
+        "primaryColorLikelihood": 0.6,
+        "secondaryColor": "#30975d",
+        "randomizeBHue": false,
+        "unitSize": 12,
+        "maxWidthUnits": 5,
+        "maxHeightUnits": 10
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "title": "Stripe Season",
+    "values": {
+        "fillWidth": 0.5,
+        "fillHeight": 1,
+        "horizontalBorderSize": 0,
+        "verticalBorderSize": 10,
+        "borderColor": "#ffffff",
+        "primaryColor": "#063c65",
+        "primaryColorLikelihood": 0.5,
+        "secondaryColor": "#209fee",
+        "randomizeBHue": true,
+        "unitSize": 20,
+        "maxWidthUnits": 5,
+        "maxHeightUnits": 15
+    }
+}
