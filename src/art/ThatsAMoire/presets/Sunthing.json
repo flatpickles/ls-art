@@ -1,0 +1,17 @@
+{
+    "title": "Sunthing",
+    "values": {
+        "dimensions": [9, 12],
+        "rayCount": 30,
+        "outerRadius": 0.95,
+        "innerRadius": 0.05,
+        "centerOffset": 0,
+        "rotationOffset": 0.04,
+        "noiseIntensity": 0.63,
+        "noiseDensity": 1,
+        "noiseVariant": 0.9,
+        "asymmetry": 0,
+        "lineResolution": 100,
+        "lineWidth": 0.5
+    }
+}
