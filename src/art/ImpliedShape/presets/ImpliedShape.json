@@ -1,0 +1,17 @@
+{
+    "title": "Implied Donut",
+    "key": "ImpliedDonut",
+    "values": {
+        "dimensions": [
+            9,
+            9
+        ],
+        "rectCount": 7,
+        "innerMask": true,
+        "outerMask": true,
+        "innerSize": 0.15,
+        "outerSize": 0.36,
+        "gapSize": 0.01,
+        "lineWidth": 1.15
+    }
+}
