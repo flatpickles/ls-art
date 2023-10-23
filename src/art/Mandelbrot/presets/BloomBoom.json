@@ -1,0 +1,8 @@
+{
+    "title": "Bloom Boom",
+    "values": {
+        "zoom": 0.64,
+        "renderOffset": [-0.22, 0.65],
+        "colorCycles": 4.0
+    }
+}
