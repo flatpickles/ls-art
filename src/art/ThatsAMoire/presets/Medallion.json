@@ -1,0 +1,17 @@
+{
+    "title": "Medallion",
+    "values": {
+        "dimensions": [9, 12],
+        "rayCount": 150,
+        "outerRadius": 0.9,
+        "innerRadius": 0.2,
+        "centerOffset": 0.003,
+        "rotationOffset": 0.07,
+        "noiseIntensity": 0.45,
+        "noiseDensity": 0.67,
+        "noiseVariant": 0.35,
+        "asymmetry": 0.14,
+        "lineResolution": 100,
+        "lineWidth": 0.51
+    }
+}

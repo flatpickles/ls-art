@@ -1,0 +1,17 @@
+{
+    "title": "The Original",
+    "values": {
+        "dimensions": [4, 4],
+        "rayCount": 80,
+        "outerRadius": 0.9,
+        "innerRadius": 0.2,
+        "centerOffset": 0.035,
+        "rotationOffset": 0,
+        "noiseIntensity": 0.63,
+        "noiseDensity": 0.7,
+        "noiseVariant": 0.9,
+        "asymmetry": 0,
+        "lineResolution": 50,
+        "lineWidth": 0.5
+    }
+}
