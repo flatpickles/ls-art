@@ -94,6 +94,9 @@ export default class Rectilinear extends Project {
         const structure = this.#structure!;
 
         // Translate canvas if resized from actual structure dimensions
+        // [bug] This causes alignment issues if the canvas has been resized to be smaller than the
+        // ..... structure. I'm not sure why this is happening, but it's code from the original
+        // ..... project, so I won't fix it for now (as of skbk port in October '23)
         const widthScale = width / structure.fullWidth;
         const heightScale = height / structure.fullHeight;
         if (widthScale < heightScale) {
