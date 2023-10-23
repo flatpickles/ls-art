@@ -1,0 +1,15 @@
+{
+    "title": "Look Up",
+    "values": {
+        "divisionCount": 3,
+        "taperRatio": 0.67,
+        "taperCount": 20,
+        "expandedForm": false,
+        "innerCircleCount": 1,
+        "linearInner": false,
+        "rotation": 0.25,
+        "inset": 0.01,
+        "innerLineWidth": 1,
+        "outerLineWidth": 1.5
+    }
+}

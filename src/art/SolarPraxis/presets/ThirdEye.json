@@ -1,0 +1,15 @@
+{
+    "title": "Third Eye",
+    "values": {
+        "divisionCount": 8,
+        "taperRatio": 0.5,
+        "taperCount": 6,
+        "expandedForm": false,
+        "innerCircleCount": 0,
+        "linearInner": false,
+        "rotation": 0,
+        "inset": 0.05,
+        "innerLineWidth": 0.45,
+        "outerLineWidth": 0.9
+    }
+}

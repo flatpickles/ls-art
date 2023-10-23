@@ -1,0 +1,15 @@
+{
+    "title": "The New Normal",
+    "values": {
+        "divisionCount": 4,
+        "taperRatio": 0.59,
+        "taperCount": 7,
+        "expandedForm": false,
+        "innerCircleCount": 25,
+        "linearInner": true,
+        "rotation": 0,
+        "inset": 0.05,
+        "innerLineWidth": 0.25,
+        "outerLineWidth": 1
+    }
+}
