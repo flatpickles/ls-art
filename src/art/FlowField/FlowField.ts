@@ -2,7 +2,7 @@ import CanvasSketchProject, {
     type CanvasSketchProps,
     type CanvasSketchRender
 } from '../util/CanvasSketchProject';
-import FlowGenerator from './FlowGenerator';
+import FlowGenerator from './FlowGen';
 import { renderPaths } from 'canvas-sketch-util/penplot';
 
 export default class FlowField extends CanvasSketchProject {
