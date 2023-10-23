@@ -1,0 +1,15 @@
+{
+    "title": "Sigil",
+    "values": {
+        "divisionCount": 6,
+        "taperRatio": 0.5,
+        "taperCount": 4,
+        "expandedForm": true,
+        "innerCircleCount": 1,
+        "linearInner": false,
+        "rotation": 0.5,
+        "inset": 0.01,
+        "innerLineWidth": 1,
+        "outerLineWidth": 1
+    }
+}
