@@ -52,7 +52,7 @@
         "angle-normals": "^1.0.0",
         "bezier-spline": "^2.0.0",
         "canvas-sketch": "^0.7.7",
-        "canvas-sketch-util": "^1.10.0",
+        "canvas-sketch-util": "github:flatpickles/canvas-sketch-util#svg-groups",
         "d3-path": "^3.1.0",
         "gl-matrix": "^3.4.3",
         "glsl-easings": "^1.0.0",

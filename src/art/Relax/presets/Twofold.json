@@ -1,0 +1,19 @@
+{
+    "title": "Twofold",
+    "values": {
+        "dimensions": [9, 12],
+        "pathCount": 70,
+        "polygonSides": 4,
+        "twoTone": false,
+        "topSize": 0.77,
+        "bottomSize": 0.77,
+        "topCircle": false,
+        "bottomCircle": false,
+        "topRotation": 0.15,
+        "bottomRotation": 0.3,
+        "inset": 0.05,
+        "normalizeInset": true,
+        "resolution": 1,
+        "lineWidth": 0.7
+    }
+}
