@@ -1,0 +1,19 @@
+{
+    "title": "Fuselage",
+    "values": {
+        "dimensions": [9, 12],
+        "pathCount": 25,
+        "polygonSides": 9,
+        "twoTone": false,
+        "topSize": 0.3,
+        "bottomSize": 0.8,
+        "topCircle": true,
+        "bottomCircle": false,
+        "topRotation": 0.31,
+        "bottomRotation": 0.21,
+        "inset": 0.05,
+        "normalizeInset": true,
+        "resolution": 1,
+        "lineWidth": 1.25
+    }
+}

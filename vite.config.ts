@@ -18,7 +18,8 @@ const bundleDeps = [
     'bezier-spline',
     'regl-camera',
     'angle-normals',
-    'gl-matrix'
+    'gl-matrix',
+    'd3-path'
 ];
 
 // viteGlslify is a lightweight Vite plugin that compiles GLSL files with glslify. It will compile

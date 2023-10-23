@@ -1,0 +1,19 @@
+{
+    "title": "Pyramidish",
+    "values": {
+        "dimensions": [9, 12],
+        "pathCount": 64,
+        "polygonSides": 4,
+        "twoTone": true,
+        "topSize": 1,
+        "bottomSize": 0.18,
+        "topCircle": false,
+        "bottomCircle": true,
+        "topRotation": 0.16,
+        "bottomRotation": 0.87,
+        "inset": 0.05,
+        "normalizeInset": true,
+        "resolution": 1,
+        "lineWidth": 0.89
+    }
+}
