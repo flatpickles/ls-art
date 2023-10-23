@@ -1,0 +1,17 @@
+{
+    "title": "Defrag Skyline",
+    "values": {
+        "fillWidth": 1,
+        "fillHeight": 1,
+        "horizontalBorderSize": 1,
+        "verticalBorderSize": 0,
+        "borderColor": "#ffffff",
+        "primaryColor": "#000000",
+        "primaryColorLikelihood": 0.89,
+        "secondaryColor": "#ffffff",
+        "randomizeBHue": false,
+        "unitSize": 20,
+        "maxWidthUnits": 10,
+        "maxHeightUnits": 20
+    }
+}
