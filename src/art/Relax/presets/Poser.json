@@ -1,0 +1,19 @@
+{
+    "title": "Poser",
+    "values": {
+        "dimensions": [9, 12],
+        "pathCount": 100,
+        "polygonSides": 5,
+        "twoTone": true,
+        "topSize": 0.8,
+        "bottomSize": 0.2,
+        "topCircle": false,
+        "bottomCircle": false,
+        "topRotation": 0.75,
+        "bottomRotation": 0.75,
+        "inset": 0.05,
+        "normalizeInset": true,
+        "resolution": 1,
+        "lineWidth": 0.7
+    }
+}
