@@ -5,7 +5,21 @@ import { defineConfig } from 'vitest/config';
 
 // List any dependencies here that you want to be pre-bundled. This avoids page reloads when loading
 // projects that use these dependencies.
-const bundleDeps = ['js-cookie', 'three', 'p5'];
+const bundleDeps = [
+    'js-cookie',
+    'regl',
+    'three',
+    'p5',
+    'canvas-sketch-util/penplot',
+    'canvas-sketch-util/color',
+    'canvas-sketch',
+    'alea',
+    'simplex-noise',
+    'bezier-spline',
+    'regl-camera',
+    'angle-normals',
+    'gl-matrix'
+];
 
 // viteGlslify is a lightweight Vite plugin that compiles GLSL files with glslify. It will compile
 // any .vert, .frag, or .glsl files that include the string "#pragma glslify" in the file, and can
