@@ -3,7 +3,6 @@ precision highp float;
 uniform float time;
 uniform vec2 renderSize;
 
-
 uniform float spin; // -0.2, "Spin Amount", -1 to 1
 uniform float scaledTime1;
 uniform float noiseAmount; // 0.15, "Noise Amount", 0 to 1
