@@ -40,7 +40,7 @@ const projectSortOrder = SortOrder.ReverseChronological;
 const groupSortOrder = SortOrder.Alphabetical;
 
 // Always show presets UI; otherwise, the UI will only be visible when a project has presets.
-const alwaysShowPresets = dev;
+const alwaysShowPresets = false;
 
 // Allow exporting the current project parameter values in a preset JSON file from the presets UI.
 // These files can be added directly to a project's `presets` directory and used as bundled presets.
@@ -59,10 +59,7 @@ const showRecordingControls = true;
 // in the settings panel will be persisted in local storage, and the values set above will be used
 // as defaults.
 const withDevSettings: Record<string, string> = dev
-    ? {
-          alwaysShowPresets: '[dev] Show Presets',
-          enablePresetExport: '[dev] Preset Export'
-      }
+    ? { alwaysShowPresets: '[dev] Show Presets' }
     : {};
 export const userSettingsLabels: Record<string, string> = {
     projectSortOrder: 'Project Sorting',
