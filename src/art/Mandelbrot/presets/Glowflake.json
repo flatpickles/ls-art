@@ -1,0 +1,8 @@
+{
+    "title": "Glowflake",
+    "values": {
+        "zoom": 0.5,
+        "renderOffset": [0.14, 0.65],
+        "colorCycles": 8
+    }
+}

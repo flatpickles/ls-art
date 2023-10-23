@@ -1,0 +1,8 @@
+{
+    "title": "Dragon's Salute",
+    "values": {
+        "zoom": 0.73,
+        "renderOffset": [-0.02, 0.71],
+        "colorCycles": 2.0
+    }
+}
