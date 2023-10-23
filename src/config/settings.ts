@@ -40,7 +40,7 @@ const projectSortOrder = SortOrder.ReverseChronological;
 const groupSortOrder = SortOrder.Alphabetical;
 
 // Always show presets UI; otherwise, the UI will only be visible when a project has presets.
-const alwaysShowPresets = false;
+const alwaysShowPresets = dev;
 
 // Allow exporting the current project parameter values in a preset JSON file from the presets UI.
 // These files can be added directly to a project's `presets` directory and used as bundled presets.
@@ -56,13 +56,21 @@ const defaultCanvasSize = [1080, 1080];
 const showRecordingControls = true;
 
 // Anything listed here will appear in the user settings panel with the given label. Values changed
-// in the settings panel will be persisted in cookies, and values above will be used as defaults.
+// in the settings panel will be persisted in local storage, and the values set above will be used
+// as defaults.
+const withDevSettings: Record<string, string> = dev
+    ? {
+          alwaysShowPresets: '[dev] Show Presets',
+          enablePresetExport: '[dev] Preset Export'
+      }
+    : {};
 export const userSettingsLabels: Record<string, string> = {
     projectSortOrder: 'Project Sorting',
     showExperiments: 'Show Experiments',
     overlayPanels: 'Overlay Panels',
     useFullscreenCanvas: 'Fullscreen Canvas',
-    defaultCanvasSize: 'Default Canvas Size'
+    defaultCanvasSize: 'Default Canvas Size',
+    ...withDevSettings
 };
 
 // Export all settings for use elsewhere in the app.
