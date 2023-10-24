@@ -20,7 +20,6 @@ export default class SolarPraxis extends CanvasSketchProject {
         return (props: CanvasSketchProps) => {
             const scaledInnerNibSize = this.innerLineWidth * 0.0393701; // mm to inches
             const scaledOuterNibSize = this.outerLineWidth * 0.0393701; // mm to inches
-            console.log(scaledInnerNibSize, scaledOuterNibSize);
             const minDimension = Math.min(props.width, props.height);
             const inset = this.inset * minDimension;
             const paths = generator.generate(

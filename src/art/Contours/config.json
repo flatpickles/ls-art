@@ -2,7 +2,7 @@
     "title": "Contours",
     "date": "07/21/2023",
     "description": "Isolines drawn over simplex noise, with additional shaping and easing to fit nicely on a piece of paper. The experimental parameters can optionally reveal the underlying data structures in artistic ways.",
-    "groups": ["Plotter Art"],
+    "groups": ["Paths"],
     "params": {
         "dimensions": {
             "name": "Dimensions",
