@@ -2,6 +2,7 @@
     "title": "Flow Field",
     "date": "05/17/2023",
     "experimental": true,
+    "groups": ["Paths"],
     "params": {
         "dimensions": {
             "name": "Dimensions",

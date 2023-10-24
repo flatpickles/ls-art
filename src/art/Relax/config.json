@@ -2,6 +2,7 @@
     "title": "Relax",
     "date": "06/03/2023",
     "description": "Gradual transitions between rigid & continuous forms. These look best with lots of tightly-packed lines, and can be drawn out mechanically with a pen plotter, using one or two colors.",
+    "groups": ["Paths"],
     "params": {
         "dimensions": {
             "name": "Dimensions",
