@@ -2,7 +2,7 @@
     "title": "Aurora Vibes",
     "date": "2/15/2023",
     "description": "A washy aurora sorta thing, mixing between colors with a series of offset noise functions. Whatever you're looking for, maybe it's in here somewhere.",
-    "groups": "Shader Art",
+    "groups": ["Pixels"],
     "params": {
         "timeScale": {
             "name": "Time Scale",

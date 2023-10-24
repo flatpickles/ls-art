@@ -2,6 +2,7 @@
     "title": "Floppy Disk",
     "date": "4/08/22",
     "description": "A wobbly warpy floppy disk. Ported over to Sketchbook from the <a href='https://editor.isf.video/shaders/62506e017917e40014095a49'>original version</a> on ISF.video.",
+    "groups": ["Pixels"],
     "params": {
         "timeScale": {
             "name": "Time Scale",

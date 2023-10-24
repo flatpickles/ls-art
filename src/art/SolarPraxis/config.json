@@ -2,6 +2,7 @@
     "title": "Solar Praxis",
     "date": "06/14/23",
     "description": "Outer circles diminish in size with a consistent ratio, radiating outward, while inner circles add complexity. These forms gesture towards sacred geometry; your mileage may vary.",
+    "groups": ["Paths"],
     "params": {
         "dimensions": {
             "name": "Dimensions",

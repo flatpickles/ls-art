@@ -1,5 +1,6 @@
 {
     "title": "No Signal",
     "date": "8/15/2022",
-    "description": "A \"no signal\" graphic, inspired by VCRs and other classic image displays. This was the first demo project created within the original Sketchbook, and has now been ported into the new Sketchbook."
+    "description": "A \"no signal\" graphic, inspired by VCRs and other classic image displays. This was the first demo project created within the original Sketchbook, and has now been ported into the new Sketchbook.",
+    "groups": ["Pixels"]
 }

@@ -2,6 +2,7 @@
     "title": "Implied Shape",
     "date": "7/3/2023",
     "description": "A shape is implied by the negative space within a ground pattern.",
+    "groups": ["Paths"],
     "params": {
         "dimensions": {
             "name": "Dimensions",

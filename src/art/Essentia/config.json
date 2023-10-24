@@ -2,7 +2,7 @@
     "title": "Essentia",
     "date": "4/23/2023",
     "description": "Colorful chaos via polar math and noise functions, as if it were meant to be. Emissions of a mind unwinding, meandering ever closer to the source.",
-    "groups": ["Shader Art"],
+    "groups": ["Pixels"],
     "params": {
         "timeScale1": {
             "name": "Drain Speed",

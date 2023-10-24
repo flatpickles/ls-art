@@ -2,6 +2,7 @@
     "title": "That's a Moiré",
     "date": "07/28/2023",
     "description": "Subtle moiré pattern generation via two offset radial patterns, each of which is identical to the other. Simplex noise distorts these patterns as they flow outward.",
+    "groups": ["Paths"],
     "params": {
         "dimensions": {
             "name": "Dimensions",

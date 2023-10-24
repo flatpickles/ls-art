@@ -2,5 +2,6 @@
     "title": "REGL Cube",
     "date": "12/05/2022",
     "description": "Playing around with a direct regl instantiation, and mouse interactions.",
-    "experimental": true
+    "experimental": true,
+    "groups": ["Pixels"]
 }

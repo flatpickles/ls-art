@@ -2,5 +2,6 @@
     "title": "Rectilinear",
     "date": "9/14/2022",
     "description": "Randomly sized rectangles, fit together edge-to-edge, with configurable color palettes. This can generate patterns in a Mondrian-like style, and can achieve many other looks as well.",
-    "staticMode": true
+    "staticMode": true,
+    "groups": ["Pixels"]
 }

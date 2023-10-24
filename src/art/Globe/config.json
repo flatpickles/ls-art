@@ -3,6 +3,7 @@
     "date": "05/17/2023",
     "description": "A simple spherical projection, rendering something like latitude & longitude lines on a globe.",
     "experimental": true,
+    "groups": ["Paths"],
     "params": {
         "dimensions": {
             "name": "Dimensions",
