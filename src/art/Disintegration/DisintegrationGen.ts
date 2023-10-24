@@ -175,7 +175,6 @@ export default class DisintegrationGen {
             }
         }
 
-        console.log(paths.length);
         return paths;
     }
 }
