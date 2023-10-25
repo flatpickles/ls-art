@@ -29,9 +29,9 @@ const openGraphContent = {
     title: title,
     description: description,
     image: 'index.png',
-    url: '',
-    author: '',
-    locale: ''
+    url: 'https://longitude.studio',
+    author: 'Matt Nichols',
+    locale: 'en_US'
 };
 
 // Export all content for use elsewhere in the app
