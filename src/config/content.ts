@@ -29,7 +29,7 @@ const openGraphContent = {
     title: title,
     description: description,
     image: 'index.png',
-    url: undefined,
+    url: 'https://longitude.studio',
     author: 'Matt Nichols',
     locale: 'en_US'
 };
