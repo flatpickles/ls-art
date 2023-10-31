@@ -1,0 +1,24 @@
+{
+    "title": "Mood Card",
+    "values": {
+        "dimensions": [
+            7,
+            4
+        ],
+        "layerCount": 8,
+        "edgeLow": 0.25,
+        "edgeHigh": 0.85,
+        "inset": 0.01,
+        "fixedAspect": false,
+        "rounding": 0,
+        "easing": 3.99,
+        "noiseScaleX": 0.85,
+        "noiseScaleY": 0.24,
+        "noiseVariant": 1,
+        "gridResolution": 200,
+        "interpolate": true,
+        "evenSpacing": true,
+        "splineTension": 1,
+        "lineWidth": 1
+    }
+}
