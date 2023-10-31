@@ -1,6 +1,7 @@
 {
     "title": "Globular",
     "values": {
+        "dimensions": [9, 12],
         "layerCount": 4,
         "edgeLow": 0.07,
         "edgeHigh": 0.85,

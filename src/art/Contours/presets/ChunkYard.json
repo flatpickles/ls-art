@@ -1,6 +1,7 @@
 {
     "title": "Chunk Yard",
     "values": {
+        "dimensions": [9, 12],
         "layerCount": 5,
         "edgeLow": 0.05,
         "edgeHigh": 1,

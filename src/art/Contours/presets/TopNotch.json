@@ -1,6 +1,7 @@
 {
     "title": "Top Notch",
     "values": {
+        "dimensions": [9, 12],
         "layerCount": 4,
         "edgeLow": 0.1,
         "edgeHigh": 0.9,
