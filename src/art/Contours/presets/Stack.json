@@ -1,6 +1,7 @@
 {
     "title": "Stack",
     "values": {
+        "dimensions": [9, 12],
         "layerCount": 4,
         "edgeLow": 0.05,
         "edgeHigh": 0.54,

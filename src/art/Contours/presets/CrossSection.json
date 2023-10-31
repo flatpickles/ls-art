@@ -1,6 +1,7 @@
 {
     "title": "Cross Section",
     "values": {
+        "dimensions": [9, 12],
         "layerCount": 5,
         "edgeLow": 0.1,
         "edgeHigh": 0.9,
