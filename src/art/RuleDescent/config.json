@@ -1,4 +1,7 @@
 {
     "title": "Rule Descent",
-    "experimental": true
+    "date": "10/31/23",
+    "description": "A cascading texture experiment, generated line-by-line.",
+    "experimental": true,
+    "groups": ["Pixels"]
 }

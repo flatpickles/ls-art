@@ -72,10 +72,11 @@ export default class Rules extends Project {
             imageData.data[pixelIndex + 3] = newPixelValue[3];
         }
 
+        // Increment the current row if we haven't reached the bottom of the canvas
         const reachedFullHeight = this.#currentRow >= canvas.height - 1;
         if (!reachedFullHeight) this.#currentRow++;
 
-        // Set the random pixel data back to the canvas
+        // Set the pixel data back to the canvas (offset by -1 if we've reached the bottom)
         context.putImageData(imageData, 0, reachedFullHeight ? -1 : 0);
     }
 
