@@ -4,8 +4,8 @@ import angleNormals from 'angle-normals';
 import { mat4 } from 'gl-matrix';
 import Project, { CanvasType, type Detail, type DetailWebGL } from '$lib/base/Project/Project';
 
-import fragShader from './frag.glsl?raw';
-import vertShader from './vert.glsl?raw';
+import fragShader from './frag.glsl';
+import vertShader from './vert.glsl';
 
 export default class ShaderDemo extends Project {
     canvasType = CanvasType.WebGL;
