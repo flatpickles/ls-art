@@ -1,5 +1,8 @@
 import type { UpdateDetail2D } from '$lib/base/Project/Project';
 import Project from '$lib/base/Project/Project';
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import Util from '../util/Legacy/Util';
 
 export default class NoSignal extends Project {
@@ -10,7 +13,7 @@ export default class NoSignal extends Project {
     update(detail: UpdateDetail2D): void {
         const width = detail.canvas.width;
         const height = detail.canvas.height;
-        const time = detail.time / 1000;
+        const time = detail.time;
 
         // Tuned constants
         const barHeight = 150;
