@@ -19,7 +19,7 @@ void main() {
 
     float littleX = fract(uv.x * gridScale * aspectRatio);
     float littleY = fract(uv.y * gridScale);
-    vec3 triangleFillSeed = vec3(uv.x * gridScale * waveScale * aspectRatio, uv.y * gridScale * waveScale, scaledTime);
+    vec3 triangleFillSeed = vec3(uv.x * gridScale * waveScale * aspectRatio, uv.y * gridScale * waveScale, scaledTime / 2.0);
     float triangleFill = simplexNoise(triangleFillSeed);
     float triangleMask = step(littleX + littleY, 1.0 + triangleFill * warpRange);
 
