@@ -3,6 +3,7 @@
     "date": "2023-11-14",
     "description": "A grid of waves, a wave of grids, or what have you.",
     "experimental": true,
+    "groups": ["Pixels"],
     "params": {
         "timeScale": {
             "name": "Time Scale",
