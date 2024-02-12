@@ -47,7 +47,6 @@
     "type": "module",
     "dependencies": {
         "@types/js-cookie": "^3.0.3",
-        "isbot": "^3.7.0",
         "alea": "^1.0.1",
         "angle-normals": "^1.0.0",
         "bezier-spline": "^2.0.0",
@@ -56,6 +55,7 @@
         "d3-path": "^3.1.0",
         "gl-matrix": "^3.4.3",
         "glsl-easings": "^1.0.0",
+        "isbot": "^3.7.0",
         "js-cookie": "^3.0.5",
         "jszip": "^3.10.1",
         "ress": "^5.0.2",

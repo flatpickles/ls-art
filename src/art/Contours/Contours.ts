@@ -77,15 +77,14 @@ export default class Contours extends CanvasSketchProject {
 
             // Create the generator
             const insetPercent = this.inset;
-            const fixedAspectDimension = Math.min(props.width, props.height);
+            const minDimension = Math.min(props.width, props.height);
             const insetValues: [number, number] = [
                 this.fixedAspect
-                    ? (props.width - fixedAspectDimension) / 2 + fixedAspectDimension * insetPercent
-                    : props.width * insetPercent,
+                    ? (props.width - minDimension) / 2 + minDimension * insetPercent
+                    : minDimension * insetPercent,
                 this.fixedAspect
-                    ? (props.height - fixedAspectDimension) / 2 +
-                      fixedAspectDimension * insetPercent
-                    : props.height * insetPercent
+                    ? (props.height - minDimension) / 2 + minDimension * insetPercent
+                    : minDimension * insetPercent
             ];
             const generator = new IsolineGrid(
                 this.gridResolution,

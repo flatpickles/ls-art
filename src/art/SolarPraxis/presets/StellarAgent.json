@@ -9,6 +9,7 @@
         "linearInner": false,
         "rotation": 0.25,
         "inset": 0.01,
+        "maxScale": false,
         "innerLineWidth": 0.75,
         "outerLineWidth": 1.25
     }

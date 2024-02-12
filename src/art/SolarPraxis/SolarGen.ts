@@ -18,7 +18,8 @@ export default class SolarGenerator {
         angleOffset = 0,
         divisionCount = 3,
         innerCircleCount = 2,
-        linearInner = false
+        linearInner = false,
+        maxScale = true
     ): Path[][] {
         // Calculate tapering circle values from a unit circle centered at [0, 0]
         const relativeCircles: Circle[] = [];
@@ -54,7 +55,9 @@ export default class SolarGenerator {
         // Calculate scaling factor to fit the circles within the bounds
         const boundsWidth = bottomRight[0] - topLeft[0];
         const boundsHeight = bottomRight[1] - topLeft[1];
-        const scale = Math.min(boundsWidth / (designRadius * 2), boundsHeight / (designRadius * 2));
+        const scale = maxScale
+            ? Math.max(boundsWidth / (designRadius * 2), boundsHeight / (designRadius * 2))
+            : Math.min(boundsWidth / (designRadius * 2), boundsHeight / (designRadius * 2));
         const center: [number, number] = [
             topLeft[0] + boundsWidth / 2,
             topLeft[1] + boundsHeight / 2
