@@ -11,6 +11,7 @@ export default class SolarPraxis extends CanvasSketchProject {
     linearInner = false; // "Linear Inner"
     rotation = 0; // "Rotation"
     inset = 0.1; // "Added Inset", 0.01 to 0.25
+    maxScale = false; // "Max Scale"
     innerLineWidth = 0.4; // "Inner Nib (mm)", 0.01 to 2
     outerLineWidth = 1; // "Outer Nib (mm)", 0.01 to 2
 
@@ -31,7 +32,8 @@ export default class SolarPraxis extends CanvasSketchProject {
                 (this.rotation * Math.PI * 2) / this.divisionCount,
                 this.divisionCount,
                 this.innerCircleCount,
-                this.linearInner
+                this.linearInner,
+                this.maxScale
             );
 
             return renderPaths(paths, {
