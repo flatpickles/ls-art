@@ -20,28 +20,58 @@ export default class RadialPatterns extends CanvasSketchProject {
     // skew = 0; // "Skew", -1 to 1
     // useSkew = true; // "Use Skew"
 
+    skew = 0; // "Skew", -1 to 1
+    skewMode = false; // "Skew Mode"
+
     sketch() {
         return (props: CanvasSketchProps) => {
             const { width, height } = props;
 
-            // Useful constants
-            const center = [width / 2, height / 2];
-            const maxRadius = Math.min(width, height) / 2;
-            const radiusRangeSize = (1 - this.outerInset - this.innerInset) * maxRadius;
-            const gapSize = (1 / this.ringCount) * radiusRangeSize;
-
             // Generate ring sizing
             const rings: [inside: number, outside: number][] = [];
-            for (let layer = 0; layer < this.ringCount; layer++) {
-                const radius = maxRadius * this.innerInset + (layer + 1) * gapSize;
-                const progress = layer / (this.ringCount - 1);
-                const taperMultiplier =
-                    progress * (1 - this.outsideTaper) + (1 - progress) * (1 - this.insideTaper);
-                const zigZagSize = gapSize * this.zigZagSize * taperMultiplier;
-                rings.push([radius - zigZagSize, radius]);
+            if (this.skewMode) {
+                // Calculate the scaled slope of the unit sizes
+                const scaledSlope = (this.skew * (2 / this.ringCount)) / (this.ringCount - 1);
+
+                // Calculate the unit size of each zigzag
+                const unitZigZagSizes: number[] = [];
+                const firstZigZagSize =
+                    1 / this.ringCount - ((this.ringCount - 1) * scaledSlope) / 2;
+                for (let layer = 0; layer < this.ringCount; layer++) {
+                    const currentZigZagSize = firstZigZagSize + layer * scaledSlope;
+                    unitZigZagSizes.push(currentZigZagSize);
+                }
+
+                // Generate ring sizes
+                const fullRadius = Math.min(width, height) / 2;
+                let currentRadius = fullRadius * this.innerInset;
+                for (let layer = 0; layer < this.ringCount; layer++) {
+                    const currentZigZagSize = unitZigZagSizes[layer] * fullRadius;
+                    const ringSizes: [number, number] = [
+                        currentRadius,
+                        currentRadius + currentZigZagSize
+                    ];
+                    rings.push(ringSizes);
+                    currentRadius += currentZigZagSize;
+                }
+            } else {
+                const maxRadius = Math.min(width, height) / 2;
+                const radiusRangeSize = (1 - this.outerInset - this.innerInset) * maxRadius;
+                const gapSize = (1 / this.ringCount) * radiusRangeSize;
+
+                for (let layer = 0; layer < this.ringCount; layer++) {
+                    const radius = maxRadius * this.innerInset + (layer + 1) * gapSize;
+                    const progress = layer / (this.ringCount - 1);
+                    const taperMultiplier =
+                        progress * (1 - this.outsideTaper) +
+                        (1 - progress) * (1 - this.insideTaper);
+                    const zigZagSize = gapSize * this.zigZagSize * taperMultiplier;
+                    rings.push([radius - zigZagSize, radius]);
+                }
             }
 
             // Generate paths
+            const center = [width / 2, height / 2];
             const paths: [number, number][][] = [];
             for (let pathIdx = 0; pathIdx < this.ringCount; pathIdx++) {
                 const path: [number, number][] = [];
