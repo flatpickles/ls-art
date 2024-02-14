@@ -15,13 +15,11 @@ export default class RadialPatterns extends CanvasSketchProject {
     innerInset = 0.25; // "Inner Inset", 0.0 to 1.0
     outerInset = 0; // "Outer Inset", 0.0 to 1.0
 
-    // skew vs taper; taper leaves gaps
-    // what to do with zigZagSize
-    // skew = 0; // "Skew", -1 to 1
-    // useSkew = true; // "Use Skew"
-
-    skew = 0; // "Skew", -1 to 1
+    // todo: integrate these // see if there's a better way to combine modes
+    // e.g. skew should allow gaps as well... somehow
+    // skew vs taper; taper leaves gaps (currently)
     skewMode = false; // "Skew Mode"
+    skew = 0; // "Skew", -1 to 1
 
     sketch() {
         return (props: CanvasSketchProps) => {
@@ -44,9 +42,10 @@ export default class RadialPatterns extends CanvasSketchProject {
 
                 // Generate ring sizes
                 const fullRadius = Math.min(width, height) / 2;
+                const radiusRangeSize = (1 - this.outerInset - this.innerInset) * fullRadius;
                 let currentRadius = fullRadius * this.innerInset;
                 for (let layer = 0; layer < this.ringCount; layer++) {
-                    const currentZigZagSize = unitZigZagSizes[layer] * fullRadius;
+                    const currentZigZagSize = unitZigZagSizes[layer] * radiusRangeSize;
                     const ringSizes: [number, number] = [
                         currentRadius,
                         currentRadius + currentZigZagSize
