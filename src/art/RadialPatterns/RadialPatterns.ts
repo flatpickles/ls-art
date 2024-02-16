@@ -1,25 +1,19 @@
-// todo: re-enable typescript in this file
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-
 import CanvasSketchProject, { type CanvasSketchProps } from '../util/CanvasSketchProject';
 import { renderPaths } from 'canvas-sketch-util/penplot';
+
+// Ideas:
+// - smooth paths relative to their zig zag size (angle) - configurable
+// - nested zigzags - how? size > 1 maybe?
 
 export default class RadialPatterns extends CanvasSketchProject {
     ringCount = 20; // "Ring Count", 2 to 100, step 1
     zigZagCount = 10; // "Zig Zag Count", 2 to 200, step 1
     zigZagSize = 0.5; // "Zig Zag Size", 0.1 to 1
     rotationOffset = 0; // "Rotation Offset", -1 to 1
-    insideTaper = 0; // "Inside Taper", 0 to 1
-    outsideTaper = 0; // "Outside Taper", 0 to 1
     innerInset = 0.25; // "Inner Inset", 0.0 to 1.0
     outerInset = 0; // "Outer Inset", 0.0 to 1.0
-
-    // todo: integrate these // see if there's a better way to combine modes
-    // e.g. skew should allow gaps as well... somehow
-    // skew vs taper; taper leaves gaps (currently)
-    skewMode = false; // "Skew Mode"
     skew = 0; // "Skew", -1 to 1
+    fillSpace = false; // "Fill Space"
 
     sketch() {
         return (props: CanvasSketchProps) => {
@@ -27,7 +21,7 @@ export default class RadialPatterns extends CanvasSketchProject {
 
             // Generate ring sizing
             const rings: [inside: number, outside: number][] = [];
-            if (this.skewMode) {
+            if (this.fillSpace) {
                 // Calculate the scaled slope of the unit sizes
                 const scaledSlope = (this.skew * (2 / this.ringCount)) / (this.ringCount - 1);
 
@@ -54,17 +48,18 @@ export default class RadialPatterns extends CanvasSketchProject {
                     currentRadius += currentZigZagSize;
                 }
             } else {
+                // Calculate gap sizes between equidistant ring centers
                 const maxRadius = Math.min(width, height) / 2;
                 const radiusRangeSize = (1 - this.outerInset - this.innerInset) * maxRadius;
                 const gapSize = (1 / this.ringCount) * radiusRangeSize;
 
                 for (let layer = 0; layer < this.ringCount; layer++) {
+                    // todo: resize from center
                     const radius = maxRadius * this.innerInset + (layer + 1) * gapSize;
                     const progress = layer / (this.ringCount - 1);
-                    const taperMultiplier =
-                        progress * (1 - this.outsideTaper) +
-                        (1 - progress) * (1 - this.insideTaper);
-                    const zigZagSize = gapSize * this.zigZagSize * taperMultiplier;
+                    const skewSizeMultiplier =
+                        this.skew > 0 ? 1 - this.skew * (1 - progress) : 1 + this.skew * progress;
+                    const zigZagSize = gapSize * this.zigZagSize * skewSizeMultiplier;
                     rings.push([radius - zigZagSize, radius]);
                 }
             }
