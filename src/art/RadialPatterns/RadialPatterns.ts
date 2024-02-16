@@ -13,7 +13,7 @@ export default class RadialPatterns extends CanvasSketchProject {
     innerInset = 0.25; // "Inner Inset", 0.0 to 1.0
     outerInset = 0; // "Outer Inset", 0.0 to 1.0
     skew = 0; // "Skew", -1 to 1
-    fillSpace = false; // "Fill Space"
+    equidistant = true; // "Equidistant"
 
     sketch() {
         return (props: CanvasSketchProps) => {
@@ -21,7 +21,22 @@ export default class RadialPatterns extends CanvasSketchProject {
 
             // Generate ring sizing
             const rings: [inside: number, outside: number][] = [];
-            if (this.fillSpace) {
+            if (this.equidistant) {
+                // Calculate gap sizes between equidistant ring centers
+                const maxRadius = Math.min(width, height) / 2;
+                const radiusRangeSize = (1 - this.outerInset - this.innerInset) * maxRadius;
+                const gapSize = (1 / this.ringCount) * radiusRangeSize;
+
+                // Generate ring sizes
+                for (let layer = 0; layer < this.ringCount; layer++) {
+                    const radius = maxRadius * this.innerInset + (layer + 0.5) * gapSize;
+                    const progress = layer / (this.ringCount - 1);
+                    const skewSizeMultiplier =
+                        this.skew > 0 ? 1 - this.skew * (1 - progress) : 1 + this.skew * progress;
+                    const zigZagSize = gapSize * this.zigZagSize * skewSizeMultiplier;
+                    rings.push([radius - zigZagSize / 2, radius + zigZagSize / 2]);
+                }
+            } else {
                 // Calculate the scaled slope of the unit sizes
                 const scaledSlope = (this.skew * (2 / this.ringCount)) / (this.ringCount - 1);
 
@@ -39,28 +54,15 @@ export default class RadialPatterns extends CanvasSketchProject {
                 const radiusRangeSize = (1 - this.outerInset - this.innerInset) * fullRadius;
                 let currentRadius = fullRadius * this.innerInset;
                 for (let layer = 0; layer < this.ringCount; layer++) {
-                    const currentZigZagSize = unitZigZagSizes[layer] * radiusRangeSize;
+                    const scaledZigZagSize = unitZigZagSizes[layer] * radiusRangeSize;
+                    const adustedZigZagSize = scaledZigZagSize * this.zigZagSize;
+                    const sizeOffset = (scaledZigZagSize - adustedZigZagSize) / 2;
                     const ringSizes: [number, number] = [
-                        currentRadius,
-                        currentRadius + currentZigZagSize
+                        currentRadius + sizeOffset,
+                        currentRadius + adustedZigZagSize
                     ];
                     rings.push(ringSizes);
-                    currentRadius += currentZigZagSize;
-                }
-            } else {
-                // Calculate gap sizes between equidistant ring centers
-                const maxRadius = Math.min(width, height) / 2;
-                const radiusRangeSize = (1 - this.outerInset - this.innerInset) * maxRadius;
-                const gapSize = (1 / this.ringCount) * radiusRangeSize;
-
-                for (let layer = 0; layer < this.ringCount; layer++) {
-                    // todo: resize from center
-                    const radius = maxRadius * this.innerInset + (layer + 1) * gapSize;
-                    const progress = layer / (this.ringCount - 1);
-                    const skewSizeMultiplier =
-                        this.skew > 0 ? 1 - this.skew * (1 - progress) : 1 + this.skew * progress;
-                    const zigZagSize = gapSize * this.zigZagSize * skewSizeMultiplier;
-                    rings.push([radius - zigZagSize, radius]);
+                    currentRadius += scaledZigZagSize;
                 }
             }
 
