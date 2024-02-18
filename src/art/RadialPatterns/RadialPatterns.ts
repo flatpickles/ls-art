@@ -1,18 +1,27 @@
 import CanvasSketchProject, { type CanvasSketchProps } from '../util/CanvasSketchProject';
 import { renderPaths } from 'canvas-sketch-util/penplot';
+import PathUtil from '../util/Legacy/PathUtil';
+import type { Path } from 'd3-path';
 
-// Ideas:
-// - smooth paths relative to their zig zag size (angle) - configurable
+// Todo:
+// - smoothSkew smooth paths relative to their distance from center
+// - min & max radius can overshoot w/ ring size incorporated
+
+// Sketchbook:
+// - Randomize params
+// - Scroll to selected piece in left panel
 
 export default class RadialPatterns extends CanvasSketchProject {
-    ringCount = 20; // "Ring Count", 2 to 100, step 1
+    minRadius = 0.25; // "Min Radius", 0.0 to 1.0
+    maxRadius = 0.9; // "Max Radius", 0.0 to 1.0
     equidistant = true; // "Equidistant"
-    zigZagCount = 10; // "Zig Zag Count", 2 to 200, step 1
-    zigZagSize = 0.5; // "Zig Zag Size", 0 to 3
-    rotationOffset = 0; // "Rotation Offset", -1 to 1
-    innerInset = 0.25; // "Inner Inset", 0.0 to 1.0
-    outerInset = 0; // "Outer Inset", 0.0 to 1.0
-    skew = 0; // "Skew", -1 to 1
+    tipCount = 10; // "Tip Count", 2 to 100, step 1
+    ringCount = 20; // "Ring Count", 2 to 50, step 1
+    rotationOffset = 0; // "Ring Rotation", -1 to 1
+    ringSize = 0.5; // "Ring Size", 0 to 3
+    sizeSkew = 0; // "Size Skew", -1 to 1
+    smoothing = 0; // "Smoothing", 0 to 2
+    // smoothSkew = 0; // "Smooth Skew", -1 to 1
 
     sketch() {
         return (props: CanvasSketchProps) => {
@@ -23,21 +32,23 @@ export default class RadialPatterns extends CanvasSketchProject {
             const rings: [inside: number, outside: number][] = [];
             if (this.equidistant) {
                 // Calculate gap sizes between equidistant ring centers
-                const radiusRangeSize = (1 - this.outerInset - this.innerInset) * fullRadius;
+                const radiusRangeSize = (this.maxRadius - this.minRadius) * fullRadius;
                 const gapSize = (1 / this.ringCount) * radiusRangeSize;
 
                 // Generate ring sizes
                 for (let layer = 0; layer < this.ringCount; layer++) {
-                    const radius = fullRadius * this.innerInset + (layer + 0.5) * gapSize;
+                    const radius = fullRadius * this.minRadius + (layer + 0.5) * gapSize;
                     const progress = layer / (this.ringCount - 1);
                     const skewSizeMultiplier =
-                        this.skew > 0 ? 1 - this.skew * (1 - progress) : 1 + this.skew * progress;
-                    const zigZagSize = gapSize * this.zigZagSize * skewSizeMultiplier;
+                        this.sizeSkew > 0
+                            ? 1 - this.sizeSkew * (1 - progress)
+                            : 1 + this.sizeSkew * progress;
+                    const zigZagSize = gapSize * this.ringSize * skewSizeMultiplier;
                     rings.push([radius - zigZagSize / 2, radius + zigZagSize / 2]);
                 }
             } else {
                 // Calculate the scaled slope of the unit sizes
-                const scaledSlope = (this.skew * (2 / this.ringCount)) / (this.ringCount - 1);
+                const scaledSlope = (this.sizeSkew * (2 / this.ringCount)) / (this.ringCount - 1);
 
                 // Calculate the unit size of each zigzag
                 const unitZigZagSizes: number[] = [];
@@ -49,11 +60,11 @@ export default class RadialPatterns extends CanvasSketchProject {
                 }
 
                 // Generate ring sizes
-                const radiusRangeSize = (1 - this.outerInset - this.innerInset) * fullRadius;
-                let currentRadius = fullRadius * this.innerInset;
+                const radiusRangeSize = (this.maxRadius - this.minRadius) * fullRadius;
+                let currentRadius = fullRadius * this.minRadius;
                 for (let layer = 0; layer < this.ringCount; layer++) {
                     const scaledZigZagSize = unitZigZagSizes[layer] * radiusRangeSize;
-                    const adustedZigZagSize = scaledZigZagSize * this.zigZagSize;
+                    const adustedZigZagSize = scaledZigZagSize * this.ringSize;
                     const sizeOffset = (scaledZigZagSize - adustedZigZagSize) / 2;
                     const ringSizes: [number, number] = [
                         currentRadius + sizeOffset,
@@ -65,9 +76,9 @@ export default class RadialPatterns extends CanvasSketchProject {
             }
 
             // If furthest point radius is greater than 1, scale down all rings
-            const maxRadius = Math.max(...rings.map((r) => r[1])) / fullRadius;
-            if (maxRadius > 1) {
-                const scale = 1 / maxRadius;
+            const maxDist = Math.max(...rings.map((r) => r[1])) / fullRadius;
+            if (maxDist > 1) {
+                const scale = 1 / maxDist;
                 rings.forEach((r) => {
                     r[0] *= scale;
                     r[1] *= scale;
@@ -76,10 +87,10 @@ export default class RadialPatterns extends CanvasSketchProject {
 
             // Generate paths
             const center = [width / 2, height / 2];
-            const paths: [number, number][][] = [];
+            const paths: Path[] = [];
             for (let pathIdx = 0; pathIdx < this.ringCount; pathIdx++) {
                 const path: [number, number][] = [];
-                const pointCount = this.zigZagCount * 2;
+                const pointCount = this.tipCount * 2;
                 for (let pointIdx = 0; pointIdx <= pointCount; pointIdx++) {
                     const t = (pointIdx + pathIdx * this.rotationOffset) / pointCount;
                     const angle = t * Math.PI * 2;
@@ -88,7 +99,7 @@ export default class RadialPatterns extends CanvasSketchProject {
                     const y = center[1] + Math.sin(angle) * radius;
                     path.push([x, y]);
                 }
-                paths.push(path);
+                paths.push(PathUtil.createCardinalSpline(path, this.smoothing));
             }
 
             return renderPaths(paths, {
