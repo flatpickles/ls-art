@@ -4,7 +4,6 @@ import PathUtil from '../util/Legacy/PathUtil';
 import type { Path } from 'd3-path';
 
 // Todo:
-// - smoothSkew smooth paths relative to their distance from center
 // - min & max radius can overshoot w/ ring size incorporated
 
 // Sketchbook:
@@ -18,10 +17,10 @@ export default class RadialPatterns extends CanvasSketchProject {
     tipCount = 10; // "Tip Count", 2 to 100, step 1
     ringCount = 20; // "Ring Count", 2 to 50, step 1
     rotationOffset = 0; // "Ring Rotation", -1 to 1
-    ringSize = 0.5; // "Ring Size", 0 to 3
+    ringSize = 1; // "Ring Size", 0 to 3
     sizeSkew = 0; // "Size Skew", -1 to 1
     smoothing = 0; // "Smoothing", 0 to 2
-    // smoothSkew = 0; // "Smooth Skew", -1 to 1
+    smoothSkew = 0; // "Smooth Skew", -1 to 1
 
     sketch() {
         return (props: CanvasSketchProps) => {
@@ -89,6 +88,7 @@ export default class RadialPatterns extends CanvasSketchProject {
             const center = [width / 2, height / 2];
             const paths: Path[] = [];
             for (let pathIdx = 0; pathIdx < this.ringCount; pathIdx++) {
+                // Calculate path points
                 const path: [number, number][] = [];
                 const pointCount = this.tipCount * 2;
                 for (let pointIdx = 0; pointIdx <= pointCount; pointIdx++) {
@@ -99,14 +99,23 @@ export default class RadialPatterns extends CanvasSketchProject {
                     const y = center[1] + Math.sin(angle) * radius;
                     path.push([x, y]);
                 }
-                paths.push(PathUtil.createCardinalSpline(path, this.smoothing));
+
+                // Calculate smoothing and add to paths
+                const progress = pathIdx / (this.ringCount - 1);
+                const smoothingMultiplier =
+                    this.smoothSkew > 0
+                        ? 1 - this.smoothSkew * (1 - progress)
+                        : 1 + this.smoothSkew * progress;
+                paths.push(
+                    PathUtil.createCardinalSpline(path, this.smoothing * smoothingMultiplier)
+                );
             }
 
             return renderPaths(paths, {
                 lineWidth: 0.05,
                 lineJoin: 'round',
                 lineCap: 'round',
-                strokeStyle: ['black', 'black'],
+                strokeStyle: 'black',
                 inkscape: true,
                 ...props
             });
