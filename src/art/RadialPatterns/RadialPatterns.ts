@@ -3,13 +3,6 @@ import { renderPaths } from 'canvas-sketch-util/penplot';
 import PathUtil from '../util/Legacy/PathUtil';
 import type { Path } from 'd3-path';
 
-// Todo:
-// - min & max radius can overshoot w/ ring size incorporated
-
-// Sketchbook:
-// - Randomize params
-// - Scroll to selected piece in left panel
-
 export default class RadialPatterns extends CanvasSketchProject {
     minRadius = 0.25; // "Min Radius", 0.0 to 1.0
     maxRadius = 0.9; // "Max Radius", 0.0 to 1.0
@@ -67,21 +60,11 @@ export default class RadialPatterns extends CanvasSketchProject {
                     const sizeOffset = (scaledZigZagSize - adustedZigZagSize) / 2;
                     const ringSizes: [number, number] = [
                         currentRadius + sizeOffset,
-                        currentRadius + adustedZigZagSize
+                        currentRadius + scaledZigZagSize - sizeOffset
                     ];
                     rings.push(ringSizes);
                     currentRadius += scaledZigZagSize;
                 }
-            }
-
-            // If furthest point radius is greater than 1, scale down all rings
-            const maxDist = Math.max(...rings.map((r) => r[1])) / fullRadius;
-            if (maxDist > 1) {
-                const scale = 1 / maxDist;
-                rings.forEach((r) => {
-                    r[0] *= scale;
-                    r[1] *= scale;
-                });
             }
 
             // Generate paths
