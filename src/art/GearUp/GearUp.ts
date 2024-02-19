@@ -3,16 +3,16 @@ import { renderPaths } from 'canvas-sketch-util/penplot';
 import PathUtil from '../util/Legacy/PathUtil';
 import type { Path } from 'd3-path';
 
-export default class RadialPatterns extends CanvasSketchProject {
-    minRadius = 0.25; // "Min Radius", 0.0 to 1.0
+export default class GearUp extends CanvasSketchProject {
+    minRadius = 0.2; // "Min Radius", 0.0 to 1.0
     maxRadius = 0.9; // "Max Radius", 0.0 to 1.0
-    equidistant = true; // "Equidistant"
-    tipCount = 10; // "Tip Count", 2 to 100, step 1
-    ringCount = 20; // "Ring Count", 2 to 50, step 1
+    equidistant = false; // "Equidistant"
+    tipCount = 30; // "Tip Count", 2 to 100, step 1
+    ringCount = 7; // "Ring Count", 2 to 50, step 1
     rotationOffset = 0; // "Ring Rotation", -1 to 1
     ringSize = 1; // "Ring Size", 0 to 3
-    sizeSkew = 0; // "Size Skew", -1 to 1
-    smoothing = 0; // "Smoothing", 0 to 2
+    sizeSkew = -0.3; // "Size Skew", -1 to 1
+    smoothing = 0.2; // "Smoothing", 0 to 2
     smoothSkew = 0; // "Smooth Skew", -1 to 1
 
     sketch() {

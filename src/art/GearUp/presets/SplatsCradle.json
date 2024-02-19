@@ -1,0 +1,16 @@
+{
+    "title": "Splat's Cradle",
+    "values": {
+        "dimensions": [8, 8],
+        "minRadius": 0.33,
+        "maxRadius": 0.92,
+        "equidistant": false,
+        "tipCount": 11,
+        "ringCount": 4,
+        "rotationOffset": 1,
+        "ringSize": 1.2,
+        "sizeSkew": -0.25,
+        "smoothing": 1.5,
+        "smoothSkew": -1
+    }
+}
