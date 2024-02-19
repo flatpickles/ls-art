@@ -1,0 +1,16 @@
+{
+    "title": "Saves Nine",
+    "values": {
+        "dimensions": [9, 9],
+        "minRadius": 0.25,
+        "maxRadius": 0.9,
+        "equidistant": false,
+        "tipCount": 9,
+        "ringCount": 18,
+        "rotationOffset": 0.2,
+        "ringSize": 1.8,
+        "sizeSkew": 0,
+        "smoothing": 1.25,
+        "smoothSkew": 0.75
+    }
+}
