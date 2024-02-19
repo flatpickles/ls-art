@@ -1,0 +1,16 @@
+{
+    "title": "Gemstone Donut",
+    "values": {
+        "dimensions": [8, 8],
+        "minRadius": 0.1,
+        "maxRadius": 0.95,
+        "equidistant": false,
+        "tipCount": 14,
+        "ringCount": 5,
+        "rotationOffset": 1,
+        "ringSize": 1,
+        "sizeSkew": -1,
+        "smoothing": 0.5,
+        "smoothSkew": 1
+    }
+}

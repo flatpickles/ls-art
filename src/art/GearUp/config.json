@@ -1,5 +1,7 @@
 {
-    "title": "Radial Patterns",
+    "title": "Gear Up",
+    "date": "2024-02-18",
+    "description": "Rings of zigzags with configurable position, size, rotation, and curve smoothing. No sprocket science, just a simple gear system.",
     "experimental": true,
     "params": {
         "dimensions": {
