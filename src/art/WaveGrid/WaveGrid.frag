@@ -9,7 +9,7 @@ uniform float scaledTime;
 uniform float gridScale; // "Grid Scale", 10, 1 to 30
 uniform float waveScale; // "Wave Scale", 0.5, 0 to 1
 uniform float warpRange; // "Wave Range", 0.5, 0 to 1
-uniform float smoothing; // "Smoothing", 0, 0 to 0.5, step 0.001
+uniform float smoothing; // "Smoothing", 0.005, 0 to 0.5, step 0.001
 uniform vec3 colorA; // "Color A", #55ccce
 uniform vec3 colorB; // "Color B", #301593
 
