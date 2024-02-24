@@ -1,0 +1,19 @@
+{
+    "title": "Soft Descent",
+    "values": {
+        "dimensions": [
+            8,
+            8
+        ],
+        "minRadius": 0.1,
+        "maxRadius": 0.9,
+        "equidistant": false,
+        "tipCount": 6,
+        "ringCount": 18,
+        "rotationOffset": 0.85,
+        "ringSize": 1,
+        "sizeSkew": 0.8,
+        "smoothing": 2,
+        "smoothSkew": 0.4
+    }
+}
