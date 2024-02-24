@@ -1,0 +1,19 @@
+{
+    "title": "Zenith",
+    "values": {
+        "dimensions": [
+            10,
+            10
+        ],
+        "minRadius": 0,
+        "maxRadius": 0.9,
+        "equidistant": false,
+        "tipCount": 5,
+        "ringCount": 50,
+        "rotationOffset": -0.02,
+        "ringSize": 1,
+        "sizeSkew": -1,
+        "smoothing": 0,
+        "smoothSkew": 0
+    }
+}

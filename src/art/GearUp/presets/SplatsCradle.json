@@ -2,8 +2,8 @@
     "title": "Splat's Cradle",
     "values": {
         "dimensions": [8, 8],
-        "minRadius": 0.33,
-        "maxRadius": 0.92,
+        "minRadius": 0.3,
+        "maxRadius": 0.9,
         "equidistant": false,
         "tipCount": 11,
         "ringCount": 4,

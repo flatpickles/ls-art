@@ -1,8 +1,8 @@
 {
     "title": "Gear Up",
-    "date": "2024-02-18",
-    "description": "Rings of zigzags with configurable position, size, rotation, and curve smoothing. No sprocket science, just a simple gear system.",
-    "experimental": true,
+    "date": "2024-02-24",
+    "groups": ["Paths"],
+    "description": "Rings of zigzags with configurable position, size, rotation, and curve smoothing. It's not sprocket science, just a little gear system.",
     "params": {
         "dimensions": {
             "name": "Dimensions",
@@ -10,7 +10,7 @@
             "min": 1,
             "max": 30,
             "step": 0.1,
-            "default": [8, 8]
+            "default": [10, 10]
         }
     }
 }
