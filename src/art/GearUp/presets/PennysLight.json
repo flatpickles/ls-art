@@ -1,0 +1,19 @@
+{
+    "title": "Penny's Light",
+    "values": {
+        "dimensions": [
+            9,
+            12
+        ],
+        "minRadius": 0.18,
+        "maxRadius": 1,
+        "equidistant": false,
+        "tipCount": 2,
+        "ringCount": 31,
+        "rotationOffset": 0.05,
+        "ringSize": 0.3,
+        "sizeSkew": -0.33,
+        "smoothing": 0.89,
+        "smoothSkew": -0.69
+    }
+}
