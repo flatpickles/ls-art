@@ -1,11 +1,8 @@
 {
     "title": "Zenith",
     "values": {
-        "dimensions": [
-            10,
-            10
-        ],
-        "minRadius": 0,
+        "dimensions": [10, 10],
+        "minRadius": 0.02,
         "maxRadius": 0.9,
         "equidistant": false,
         "tipCount": 5,

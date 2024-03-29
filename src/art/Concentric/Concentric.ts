@@ -5,7 +5,7 @@ import CanvasSketchProject, {
 } from '../util/CanvasSketchProject';
 import Generator from './ConcentricGen';
 
-export default class CornerRays extends CanvasSketchProject {
+export default class Concentric extends CanvasSketchProject {
     size1 = 0.25; // "Size 1", 0.01 to 1
     size2 = 1.0; // "Size 2", 0.01 to 1
     thereAndBack = false; // "There and Back"
