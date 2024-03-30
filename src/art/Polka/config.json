@@ -2,6 +2,7 @@
     "title": "Polka",
     "date": "3/29/2024",
     "groups": ["Pixels"],
+    "experimental": true,
     "params": {
         "timeScale": {
             "name": "Time Scale",
