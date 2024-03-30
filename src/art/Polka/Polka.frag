@@ -17,20 +17,26 @@ void main()	{
 
 	// Multiply the coordinate space
 	float rowOffset = fract(scaledTime);
-	float absOffset = min(rowOffset, 1.0 - rowOffset);
+	float doubleOffset = fract(scaledTime * 2.0);
+	float absOffset = min(doubleOffset, 1.0 - doubleOffset);
 	float yHeightScale = sqrt(absOffset * absOffset + 1.0);
 
 	vec2 scaledUV = uv * vec2(scale, scale * yHeightScale);
 	vec2 rowCol = floor(scaledUV);
 	vec2 uvPartial = fract(scaledUV);
 
-	// Create a circle on an isometric grid
+	// Create circles
 	float fuzz = fuzz * scale / 100.0;
-	float rowIsOdd = step(1.0, mod(scaledUV.y, 2.0));
-	float circle = 1.0 - smoothstep(circleRadius - fuzz / 2.0, circleRadius + fuzz / 2.0, length(vec2(uvPartial.x - 0.5 + rowOffset * rowIsOdd, (uvPartial.y - 0.5) / yHeightScale)));
-	circle += step(0.5, rowIsOdd) * (1.0 - smoothstep(circleRadius - fuzz / 2.0, circleRadius + fuzz / 2.0, length(vec2(uvPartial.x - 0.5 - (1.0 - rowOffset), (uvPartial.y - 0.5) / yHeightScale))));
+	float rowIsOdd = step(1.0, mod(scaledUV.y, 2.0)); // even/odd naming?
+	float evenCircleFieldA = step(0.5, rowIsOdd) * length(vec2(uvPartial.x - 0.5 - rowOffset, (uvPartial.y - 0.5) / yHeightScale));
+	float evenCircleFieldB = step(0.5, rowIsOdd) * length(vec2(uvPartial.x - 0.5 + (1.0 - rowOffset), (uvPartial.y - 0.5) / yHeightScale));
+	float evenCircleField = min(evenCircleFieldA, evenCircleFieldB);
+	float oddCircleFieldA = step(rowIsOdd, 0.5) * length(vec2(uvPartial.x - 0.5 + rowOffset, (uvPartial.y - 0.5) / yHeightScale));
+	float oddCircleFieldB = step(rowIsOdd, 0.5) * length(vec2(uvPartial.x - 0.5 - (1.0 - rowOffset), (uvPartial.y - 0.5) / yHeightScale));
+	float oddCircleField = min(oddCircleFieldA, oddCircleFieldB);
+	float circles = 1.0 - smoothstep(circleRadius - fuzz / 2.0, circleRadius + fuzz / 2.0, evenCircleField + oddCircleField);
 
 	// Foreground background output
-	vec3 outputColor = vec3(0.0) * circle + vec3(1.0) * (1.0 - circle);
+	vec3 outputColor = vec3(0.0) * circles + vec3(1.0) * (1.0 - circles);
     gl_FragColor = vec4(outputColor, 1.0);
 }
