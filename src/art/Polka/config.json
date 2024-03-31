@@ -8,7 +8,7 @@
             "name": "Time Scale",
             "min": 0.0,
             "max": 1.0,
-            "default": 0.1
+            "default": 0.07
         }
     }
 }
