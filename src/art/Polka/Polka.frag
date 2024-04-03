@@ -6,9 +6,9 @@ varying vec2 uv;
 uniform vec2 renderSize;
 uniform float scaledTime;
 
-uniform float scale; // "Scale", 20, 1 to 100, step 1
-uniform float circleRadius; // "Circle Radius", 0.33, 0 to 0.33, step 0.01
+uniform float scale; // "Grid Scale", 20, 2 to 100, step 1
 uniform float fuzz; // "Fuzz", 0.2, 0.0 to 1, step 0.01
+const float circleRadius = 0.33;
 
 vec3 hsv(float h, float s, float v) {
     vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);

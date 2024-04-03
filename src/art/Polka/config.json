@@ -1,13 +1,13 @@
 {
-    "title": "Polka",
+    "title": "Polka Thoughts",
     "date": "3/29/2024",
+    "description": "Colorful circles oscillating between an isometric and rectilinear grid layout. You feel anything yet?",
     "groups": ["Pixels"],
-    "experimental": true,
     "params": {
         "timeScale": {
             "name": "Time Scale",
             "min": 0.0,
-            "max": 0.3,
+            "max": 0.1,
             "default": 0.07
         }
     }
