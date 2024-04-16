@@ -5,7 +5,7 @@ const description =
     'A collection of algorithmic art projects, built with <a href="https://skbk.cc">Sketchbook</a>.';
 
 // Project list footer content (use empty string to omit)
-const footer = 'Copyright © 2023 <a href="https://flatpickles.com">Matt Nichols</a>';
+const footer = 'Copyright © 2024 <a href="https://flatpickles.com">Matt Nichols</a>';
 const leftButtonIcon = 'fa-brands fa-github';
 const leftButtonLink = 'https://github.com/flatpickles/ls-art';
 
