@@ -34,7 +34,7 @@ export default class CanvasSketchProject extends Project {
             units: 'in',
             resizeCanvas: true,
             animate: this.animate,
-            hotkeys: false // todo; can we still enable save hotkey without play toggling (space)?
+            hotkeys: true // todo; can we still enable save hotkey without play toggling (space)?
         });
     }
 
