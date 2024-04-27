@@ -9,8 +9,8 @@ uniform float scale1; // "Base Scale", 1.0, 0 to 20
 uniform float scale2; // "Offset Scale", 1.0, 20 to 200
 uniform float intensity1; // "Base Intensity", 1.0, 0 to 1
 uniform float intensity2; // "Offset Intensity", 1.0, 0 to 1
-uniform vec3 color1; // "Base Color", #000000
-uniform vec3 color2; // "Offset Color", #ffffff
+uniform vec3 color1; // "Color 1", #000000
+uniform vec3 color2; // "Color 2", #ffffff
 
 // #pragma glslify: classicNoise = require(glsl-noise/classic/3d)
 #pragma glslify: simplexNoise = require(glsl-noise/simplex/3d)
