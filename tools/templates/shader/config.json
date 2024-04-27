@@ -1,5 +1,6 @@
 {
     "title": "__title__(noCase)",
+    "experimental": true,
     "params": {
         "timeScale": {
             "name": "Scaled Time",
