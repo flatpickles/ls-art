@@ -1,5 +1,6 @@
 {
     "title": "Parchment",
+    "experimental": true,
     "params": {
         "timeScale": {
             "name": "Scaled Time",
