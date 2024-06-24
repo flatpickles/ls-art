@@ -1,0 +1,10 @@
+{
+    "title": "Dreamboat",
+    "experimental": true,
+    "params": {
+        "timeScale": {
+            "name": "Scaled Time",
+            "default": 0.5
+        }
+    }
+}
