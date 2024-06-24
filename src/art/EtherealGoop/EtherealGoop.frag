@@ -16,7 +16,7 @@ uniform vec3 bgColor; // #042124, "BG Color"
 uniform vec3 bottomColor; // #042124, "Bottom Color"
 uniform vec3 topColor; // #dffaff, "Top Color"
 
-varying vec2 uv;
+varying vec2 vUv;
 
 // Color functions: https://www.shadertoy.com/view/XljGzV
 
@@ -48,7 +48,7 @@ float scaledTime_MULT = 0.2;
 void main() {
     // Adjust coordinate space
 	float aspectRatio = float(renderSize.x) / float(renderSize.y);
-	vec2 st = uv;
+	vec2 st = vUv;
 	st = st * 2.0 - 1.;
 	st.x *= aspectRatio;
     st *= goopScale;

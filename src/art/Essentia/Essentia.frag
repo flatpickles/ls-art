@@ -17,7 +17,7 @@ uniform vec3 color3; // #d77b65, "Color 3"
 uniform vec3 centerColor; // #a7edfb, "Center Color"
 uniform float centerRadius; // 0.2, "Center Radius", 0 to 1
 
-varying vec2 uv;
+varying vec2 vUv;
 
 #define PI 3.1415926538
 
@@ -50,13 +50,13 @@ float sigmoidEasing(float t, float k) {
 void main()	{
     // Coordinate system adjustment
 	float aspectRatio = float(renderSize.x) / float(renderSize.y);
-	vec2 uv = uv;
-	uv = uv * 2.0 - 1.;
-	uv.x *= aspectRatio;
+	vec2 vUv = vUv;
+	vUv = vUv * 2.0 - 1.;
+	vUv.x *= aspectRatio;
 
     // Polar coordinates (with spin)
-    float r = sqrt(uv.x * uv.x + uv.y * uv.y);
-    float theta = atan(uv.y, uv.x) + r * spin * 3.0;
+    float r = sqrt(vUv.x * vUv.x + vUv.y * vUv.y);
+    float theta = atan(vUv.y, vUv.x) + r * spin * 3.0;
 
     // Noise calculations
     float timeSeed = scaledTime2;

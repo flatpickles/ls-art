@@ -5,7 +5,7 @@ precision highp float;
 uniform float scaledTime;
 uniform vec2 renderSize;
 
-varying vec2 uv;
+varying vec2 vUv;
 
 vec3 hsv(float h, float s, float v) {
     vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
@@ -15,13 +15,13 @@ vec3 hsv(float h, float s, float v) {
 
 void main()	{
 	float aspectRatio = float(renderSize.x) / float(renderSize.y);
-	vec2 uv = uv;
-	uv = uv * 2.0 - 1.;
-	uv.x *= aspectRatio;
+	vec2 vUv = vUv;
+	vUv = vUv * 2.0 - 1.;
+	vUv.x *= aspectRatio;
 
 	// imported from 20.03.26.frag
 
-    vec2 st = uv;
+    vec2 st = vUv;
     st *= 3.;
 
     float motion = scaledTime / 10.;

@@ -1,5 +1,5 @@
 precision highp float;
-varying vec2 uv;
+varying vec2 vUv;
 
 uniform float time;
 uniform float scaledTime;
@@ -10,7 +10,7 @@ uniform vec2 renderSize;
 void main()	{
     // Coordinate system adjustment
 	float aspectRatio = float(renderSize.x) / float(renderSize.y);
-	vec2 uv = uv;
+	vec2 uv = vUv;
 	uv = uv * 2.0 - 1.;
 	uv.x *= aspectRatio;
 

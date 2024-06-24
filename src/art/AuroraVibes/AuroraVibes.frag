@@ -4,7 +4,7 @@ precision highp float;
 #pragma glslify: classicNoise = require(glsl-noise/classic/3d)
 
 uniform vec2 renderSize;
-varying vec2 uv;
+varying vec2 vUv;
 uniform float scaledTime;
 
 uniform float seedOffset; // 0.35
@@ -52,18 +52,18 @@ vec3 addLayer(vec3 background, vec3 layerColor, vec2 uv, float seed, float mixMi
 void main()	{
 	// Scale the coordinate space
 	float aspectRatio = float(renderSize.x) / float(renderSize.y);
-	vec2 uv = uv;
-	uv = uv * 2.0 - 1.;
-	uv.x *= aspectRatio;
-	uv.x *= xScale;
-	uv.y *= yScale;
-	uv /= useSimplex ? 1.5 : 1.0;
+	vec2 vUv = vUv;
+	vUv = vUv * 2.0 - 1.;
+	vUv.x *= aspectRatio;
+	vUv.x *= xScale;
+	vUv.y *= yScale;
+	vUv /= useSimplex ? 1.5 : 1.0;
 
 	// Create the blended final color
 	vec3 blended = baseColor.rgb;
 	float noiseTime = scaledTime / (useSimplex ? 1.5 : 1.0);
-	blended = addLayer(blended, color1.rgb, uv, noiseTime + seedOffset * 0.0, mixMin1, mixMax1);
-	blended = addLayer(blended, color2.rgb, uv, noiseTime + seedOffset * 1.0, mixMin2, mixMax2);
-	blended = addLayer(blended, color3.rgb, uv, noiseTime + seedOffset * 2.0, mixMin3, mixMax3);
+	blended = addLayer(blended, color1.rgb, vUv, noiseTime + seedOffset * 0.0, mixMin1, mixMax1);
+	blended = addLayer(blended, color2.rgb, vUv, noiseTime + seedOffset * 1.0, mixMin2, mixMax2);
+	blended = addLayer(blended, color3.rgb, vUv, noiseTime + seedOffset * 2.0, mixMin3, mixMax3);
 	gl_FragColor = vec4(blended, 1.0);
 }
