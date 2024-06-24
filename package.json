@@ -59,14 +59,10 @@
         "glsl-easings": "^1.0.0",
         "isbot": "^3.7.0",
         "js-cookie": "^3.0.5",
-<<<<<<< HEAD
-        "ress": "^5.0.2",
-        "three": "^0.165.0"
-=======
         "regl": "^2.1.0",
         "regl-camera": "^2.1.1",
         "ress": "^5.0.2",
-        "simplex-noise": "^4.0.1"
->>>>>>> 98752c4 (BioBlobs; begin port of Concentric)
+        "simplex-noise": "^4.0.1",
+        "three": "^0.165.0"
     }
 }
