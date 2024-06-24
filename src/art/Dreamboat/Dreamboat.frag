@@ -1,5 +1,5 @@
 precision highp float;
-varying vec2 uv;
+varying vec2 vUv;
 
 uniform float time;
 uniform float scaledTime;
@@ -19,15 +19,15 @@ float noisy(vec2 uv, float time, vec2 offset) {
 void main()	{
     // Coordinate system adjustment
 	float aspectRatio = float(renderSize.x) / float(renderSize.y);
-	vec2 uv = uv;
-	uv = uv * 2.0 - 1.;
-	uv.x *= aspectRatio;
+	vec2 vUv = vUv;
+	vUv = vUv * 2.0 - 1.;
+	vUv.x *= aspectRatio;
 	
     // Final color
 	vec2 offset = vec2(sin(scaledTime2), cos(scaledTime2)) * offsetLength;
-    float noiseTexture1 = noisy(uv, scaledTime, offset);
-    float noiseTexture2 = noisy(uv, scaledTime, offset * 2.0);
-    float noiseTexture3 = noisy(uv, scaledTime, vec2(offset * 3.0));
+    float noiseTexture1 = noisy(vUv, scaledTime, offset);
+    float noiseTexture2 = noisy(vUv, scaledTime, offset * 2.0);
+    float noiseTexture3 = noisy(vUv, scaledTime, vec2(offset * 3.0));
     vec3 finalColor = vec3(noiseTexture1, noiseTexture2, noiseTexture3);
 	gl_FragColor = vec4(finalColor, 1.0);
 }

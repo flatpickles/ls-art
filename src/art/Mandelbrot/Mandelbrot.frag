@@ -7,7 +7,7 @@ uniform float zoom; // 0.07, "Zoom"
 uniform vec2 renderOffset; // [-0.7, 0.0], "Position", -1 to 1, step 0.001
 uniform float colorCycles; // 42, "Cycles", 1 to 100, step 1
 
-varying vec2 uv;
+varying vec2 vUv;
 
 const float PI = 3.1415926535897932384626433832795;
 const int interationSize = 300;
@@ -42,7 +42,7 @@ float mandelbrot(vec2 c) {
 }
 
 void main() {
-    vec2 c = uv;
+    vec2 c = vUv;
 
     // Normalize coordinates
     c = c * 2. - 1.0;

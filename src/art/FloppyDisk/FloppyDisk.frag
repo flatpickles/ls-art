@@ -15,7 +15,7 @@ uniform vec3 color2; // #96542E, "Color 2"
 uniform vec3 color3; // #622E0F, "Color 3"
 uniform vec3 backgroundColor; // #431F0E, "BG Color"
 
-varying vec2 uv;
+varying vec2 vUv;
 
 const float smoothing = 0.005;
 const int layerCount = 12;
@@ -36,12 +36,12 @@ vec4 blend(vec4 top, vec4 bottom) {
 
 void main()	{
 	float aspectRatio = float(renderSize.x) / float(renderSize.y);
-	vec2 uv = uv;
-	uv = uv * 2.0 - 1.;
-	uv.x *= aspectRatio;
+	vec2 vUv = vUv;
+	vUv = vUv * 2.0 - 1.;
+	vUv.x *= aspectRatio;
 
-    float r = sqrt(uv.x * uv.x + uv.y * uv.y);
-    float theta = atan(uv.y, uv.x);
+    float r = sqrt(vUv.x * vUv.x + vUv.y * vUv.y);
+    float theta = atan(vUv.y, vUv.x);
 
     vec4 color = vec4(backgroundColor, 1.0);
     for (int layer = layerCount; layer >= 0; layer -= 1) {

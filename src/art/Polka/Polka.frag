@@ -2,7 +2,7 @@ precision highp float;
 
 #pragma glslify: simplexNoise = require(glsl-noise/simplex/3d)
 
-varying vec2 uv;
+varying vec2 vUv;
 uniform vec2 renderSize;
 uniform float scaledTime;
 
@@ -19,7 +19,7 @@ vec3 hsv(float h, float s, float v) {
 void main()	{
 	// Normalize aspect ratio
 	float aspectRatio = float(renderSize.x) / float(renderSize.y);
-	vec2 uv = uv * 2.0 - 1.0;
+	vec2 uv = vUv * 2.0 - 1.0;
 	uv.x *= aspectRatio;
 
 	// Multiply the coordinate space

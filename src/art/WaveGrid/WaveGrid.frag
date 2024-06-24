@@ -3,7 +3,7 @@ precision highp float;
 #pragma glslify: simplexNoise = require(glsl-noise/simplex/3d)
 
 uniform vec2 renderSize;
-varying vec2 uv;
+varying vec2 vUv;
 uniform float scaledTime;
 
 uniform float gridScale; // "Grid Scale", 10, 1 to 30
@@ -15,7 +15,7 @@ uniform vec3 colorB; // "Color B", #301593
 
 void main() {
 	float aspectRatio = float(renderSize.x) / float(renderSize.y);
-	vec2 uv = uv;
+	vec2 uv = vUv;
 	uv = uv - 0.5;
 
     float littleX = fract(uv.x * gridScale * aspectRatio);

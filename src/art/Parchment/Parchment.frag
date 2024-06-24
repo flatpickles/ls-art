@@ -1,5 +1,5 @@
 precision highp float;
-varying vec2 uv;
+varying vec2 vUv;
 
 uniform float time;
 uniform float scaledTime;
@@ -18,12 +18,12 @@ uniform vec3 color2; // "Color 2", #ffffff
 void main()	{
     // Coordinate system adjustment
 	float aspectRatio = float(renderSize.x) / float(renderSize.y);
-	vec2 uv = uv;
-	uv = uv * 2.0 - 1.;
-	uv.x *= aspectRatio;
+	vec2 vUv = vUv;
+	vUv = vUv * 2.0 - 1.;
+	vUv.x *= aspectRatio;
 
-    float noiseTexture1 = 0.5 + 0.5 * simplexNoise(vec3(uv * scale1, scaledTime + 100.0));
-    float noiseTexture2 = 0.5 + 0.5 * simplexNoise(vec3(uv * scale2, scaledTime));
+    float noiseTexture1 = 0.5 + 0.5 * simplexNoise(vec3(vUv * scale1, scaledTime + 100.0));
+    float noiseTexture2 = 0.5 + 0.5 * simplexNoise(vec3(vUv * scale2, scaledTime));
 
 	float base = noiseTexture1 * intensity1;
 	float offset = mix(0.0, base, noiseTexture2) * intensity2;
