@@ -1,0 +1,16 @@
+{
+    "title": "Organa",
+    "date": "2024-06-25",
+    "description": "As then begets now, self-reference begets self-reference. The system persists, a beholding unfolding.",
+    "experimental": true,
+    "params": {
+        "timeScale1": {
+            "name": "Color Time",
+            "default": 0.5
+        },
+        "timeScale2": {
+            "name": "Warp Time",
+            "default": 0.5
+        }
+    }
+}
