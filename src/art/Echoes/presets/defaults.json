@@ -1,0 +1,9 @@
+{
+    "values": {
+        "dimensions": [7, 7],
+        "dRadius": 0.35,
+        "dTheta": 3.141,
+        "alignment": 1,
+        "scale": 0.9
+    }
+}

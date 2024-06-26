@@ -1,0 +1,10 @@
+{
+    "title": "Whirlpool",
+    "values": {
+        "dimensions": [7, 7],
+        "dRadius": 0.15,
+        "dTheta": 0.6,
+        "alignment": 0.4,
+        "scale": 0.9
+    }
+}

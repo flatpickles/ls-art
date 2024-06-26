@@ -1,0 +1,10 @@
+{
+    "title": "Lil Nudge",
+    "values": {
+        "dimensions": [7, 7],
+        "dRadius": 0.13,
+        "dTheta": 0.185,
+        "alignment": 0.47,
+        "scale": 0.9
+    }
+}
