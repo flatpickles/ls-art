@@ -1,0 +1,19 @@
+{
+    "title": "Archipelago",
+    "values": {
+        "blendFactor": 0.88,
+        "warpDepth": 0.033,
+        "baseScale": 3,
+        "warpScale": 25,
+        "timeScale1": 0.3,
+        "timeScale3": 0.1,
+        "timeScale2": 0.1,
+        "timeScale4": 0.05,
+        "color1": [0.8196078431372549, 0.8784313725490196, 1],
+        "color2": [0, 0.47843137254901963, 0.47058823529411764],
+        "color3": [0.8, 0.4666666666666667, 0],
+        "easing": 4.43,
+        "midpoint": 0.5,
+        "rainbow": false
+    }
+}
