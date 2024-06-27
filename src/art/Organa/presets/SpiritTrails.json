@@ -1,0 +1,19 @@
+{
+    "title": "Spirit Trails",
+    "values": {
+        "blendFactor": 0.9,
+        "warpDepth": 0.04,
+        "baseScale": 3,
+        "warpScale": 1,
+        "timeScale1": 0.5,
+        "timeScale3": 0,
+        "timeScale2": 0.5,
+        "timeScale4": 0,
+        "color1": [1, 1, 1],
+        "color2": [0, 0, 0],
+        "color3": [1, 1, 1],
+        "easing": 15,
+        "midpoint": 0.05,
+        "rainbow": true
+    }
+}

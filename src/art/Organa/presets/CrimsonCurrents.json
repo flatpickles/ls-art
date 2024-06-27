@@ -1,0 +1,19 @@
+{
+    "title": "Crimson Currents",
+    "values": {
+        "blendFactor": 0.97,
+        "warpDepth": 0.045,
+        "baseScale": 3,
+        "warpScale": 10,
+        "timeScale1": 0.05,
+        "timeScale3": -0.05,
+        "timeScale2": 0.05,
+        "timeScale4": -0.05,
+        "color1": [1, 1, 1],
+        "color2": [0, 0, 0],
+        "color3": [0.8784313725490196, 0, 0],
+        "easing": 9,
+        "midpoint": 0,
+        "rainbow": false
+    }
+}
