@@ -1,0 +1,19 @@
+{
+    "title": "Strands",
+    "values": {
+        "blendFactor": 0.97,
+        "warpDepth": 0.005,
+        "baseScale": 50,
+        "warpScale": 1,
+        "timeScale1": 0.2,
+        "timeScale3": 0.05,
+        "timeScale2": 0.5,
+        "timeScale4": -0.05,
+        "color1": [0.23137254901960785, 0.5019607843137255, 0.5686274509803921],
+        "color2": [1, 0.8784313725490196, 0.8],
+        "color3": [0.23921568627450981, 0.3058823529411765, 0.054901960784313725],
+        "easing": 7,
+        "midpoint": 0.7,
+        "rainbow": true
+    }
+}

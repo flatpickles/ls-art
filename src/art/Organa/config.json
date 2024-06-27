@@ -5,12 +5,56 @@
     "experimental": true,
     "params": {
         "timeScale1": {
-            "name": "Color Time",
-            "default": 0.5
+            "name": "Base Rate",
+            "default": 0.5,
+            "min": -1.0,
+            "max": 1.0,
+            "section": "Motion"
         },
         "timeScale2": {
-            "name": "Warp Time",
-            "default": 0.5
+            "name": "Warp Rate",
+            "default": 0.5,
+            "min": -1.0,
+            "max": 1.0,
+            "section": "Motion"
+        },
+        "timeScale3": {
+            "name": "Base Drift",
+            "default": 0,
+            "min": -1.0,
+            "max": 1.0,
+            "section": "Motion"
+        },
+        "timeScale4": {
+            "name": "Warp Drift",
+            "default": 0,
+            "min": -1.0,
+            "max": 1.0,
+            "section": "Motion"
+        },
+        "color1": {
+            "name": "Color 1",
+            "section": "Color"
+        },
+        "color2": {
+            "name": "Color 2",
+            "section": "Color"
+        },
+        "color3": {
+            "name": "Color 3",
+            "section": "Color"
+        },
+        "rainbow": {
+            "name": "Rainbow",
+            "section": "Color"
+        },
+        "easing": {
+            "name": "Easing",
+            "section": "Color"
+        },
+        "midpoint": {
+            "name": "Midpoint",
+            "section": "Color"
         }
     }
 }

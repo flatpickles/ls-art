@@ -1,0 +1,19 @@
+{
+    "title": "Murkenstock",
+    "values": {
+        "blendFactor": 0.9,
+        "warpDepth": 0.015,
+        "baseScale": 1,
+        "warpScale": 15,
+        "timeScale1": 0,
+        "timeScale3": -0.15,
+        "timeScale2": 0.5,
+        "timeScale4": 0,
+        "color1": [0.0392156862745098, 0, 0.0784313725490196],
+        "color2": [0.12156862745098039, 0.3764705882352941, 0.34901960784313724],
+        "color3": [0.3215686274509804, 0.7333333333333333, 0.8980392156862745],
+        "easing": 6,
+        "midpoint": 0.5,
+        "rainbow": false
+    }
+}
