@@ -1,33 +1,40 @@
 @use "sass:color";
 
+// Custom
+$inner-border-opacity: 0.25;
+$inner-border-size: 1px;
+$inner-bg-opacity: 0.05;
+$inner-bg-opacity-hover: 0.1;
+$inner-bg-opacity-disabled: 0.05;
+
 // Typography
-$font-family: 'Arial', sans-serif;
-$title-text-size: 1.4rem;
-$large-text-size: 1rem;
-$medium-text-size: 0.9rem;
-$small-text-size: 0.8rem;
-$xs-text-size: 0.7rem;
+$font-family: 'Courier', monospace;
+$title-text-size: 1.25rem;
+$large-text-size: 0.9rem;
+$medium-text-size: 0.8rem;
+$small-text-size: 0.75rem;
+$xs-text-size: 0.65rem;
 $subtitle-text-opacity: 0.6;
 $footer-text-opacity: 0.4;
 
 // Panels
 $panel-bg-color: #fffffe;
 $panel-fg-color: #000000;
-$panel-highlight-color: #1c795d;
-$panel-width: 16rem;
-$panel-border-opacity: 0.25;
-$panel-border-radius: 0.5rem;
+$panel-highlight-color: #077742;
+$panel-width: 17rem;
+$panel-border-opacity: 0.75;
+$panel-border-radius: 0rem;
 $panel-border-size: 1px;
 $panel-animation-quick: 0.3s;
 $panel-animation-slow: 0.7s;
-$panel-content-inset: 0.75rem;
+$panel-content-inset: 0.5rem;
 $panel-section-spacing: 0.75rem;
-$panel-header-spacing: 0.5rem;
+$panel-header-spacing: 0.25rem;
 
 // Overlaid panels (enabled/disabled in settings.ts)
 $overlay-panel-edge-inset: 0.5rem;
-$overlay-panel-bg-opacity: 0.75;
-$overlay-panel-bg-filter: blur(1rem);
+$overlay-panel-bg-opacity: 0.6;
+$overlay-panel-bg-filter: blur(2rem);
 $overlay-panel-min-height: 0%;
 $overlay-panel-max-height: 100%;
 $overlay-panel-border-enabled: true;
@@ -36,19 +43,19 @@ $overlay-panel-border-enabled: true;
 $panel-button-inset: 0.25rem;
 $panel-button-size: 1.25rem;
 $panel-button-icon-size: $small-text-size;
-$panel-button-border-radius: 0.25rem;
-$panel-button-border-size: $panel-border-size;
-$panel-button-border-opacity: $panel-border-opacity;
+$panel-button-border-radius: 0rem;
+$panel-button-border-size: $inner-border-size;
+$panel-button-border-opacity: $inner-border-opacity;
 $panel-button-fg-opacity: 0.6;
-$panel-button-bg-opacity: 0.05;
+$panel-button-bg-opacity: $inner-bg-opacity;
 $panel-button-fg-opacity-hover: 0.65;
-$panel-button-bg-opacity-hover: 0.1;
+$panel-button-bg-opacity-hover: $inner-bg-opacity-hover;
 
 // Panel show buttons
 $panel-show-button-inset: 0.25rem;
-$panel-show-button-size: 1.5rem;
+$panel-show-button-size: 1.25rem;
 $panel-show-button-icon-size: $small-text-size;
-$panel-show-button-border-radius: 0.25rem;
+$panel-show-button-border-radius: 0rem;
 $panel-show-button-fg-opacity: 0.5;
 $panel-show-button-fg-opacity-hover: 0.7;
 $panel-show-button-bg-opacity: 0.5;
@@ -57,15 +64,15 @@ $panel-show-button-bg-opacity-hover: 0.7;
 // Group list
 $group-colors: $panel-highlight-color;
 $group-text-size: $small-text-size;
-$group-spacing: 0.25rem;
+$group-spacing: 0rem;
 $group-padding: 0.25rem 0.75rem;
-$group-border-radius: 1rem;
+$group-border-radius: 0rem;
 $group-border-size: 0;
 $group-border-opacity: 0.3;
 $group-selected-bg-opacity: 0.3;
 $group-selected-text-opacity: 1.0;
 $group-selected-text-weight: bold;
-$group-selected-shadow-size: 0.1rem;
+$group-selected-shadow-size: 0rem;
 $group-selected-shadow-opacity: 0.4;
 $group-unselected-bg-opacity: 0.1;
 $group-unselected-text-opacity: 0.75;
@@ -73,16 +80,16 @@ $group-unselected-text-weight: bold;
 $group-list-scroll-fade: true;
 
 // Project list
-$project-spacing: 0.25rem;
-$project-padding: 0.75rem;
+$project-spacing: 0rem;
+$project-padding: 0.5rem;
 $project-full-width: false;
-$project-border-radius: 0.5rem;
+$project-border-radius: 0rem;
 $project-border-size: 0;
 $project-border-opacity: 0.3;
 $project-selected-text-opacity: 1.0;
 $project-selected-text-weight: bold;
 $project-selected-bg-opacity: 0.3;
-$project-selected-shadow-size: 0.1rem;
+$project-selected-shadow-size: 0rem;
 $project-selected-shadow-opacity: 0.4;
 $project-unselected-text-opacity: 1.0;
 $project-unselected-text-weight: normal;
@@ -95,44 +102,44 @@ $project-list-scroll-fade: true;
 // Preset selector control
 $preset-selector-text-size: $small-text-size;
 $preset-selector-padding: 0.25rem;
-$preset-selector-border-radius: 1rem;
-$preset-selector-outer-border-size: 1px;
-$preset-selector-outer-border-opacity: 0.3;
-$preset-selector-inner-border-size: 1px;
-$preset-selector-inner-border-opacity: 0.3;
+$preset-selector-border-radius: 0rem;
+$preset-selector-outer-border-size: $inner-border-size;
+$preset-selector-outer-border-opacity: $inner-border-opacity;
+$preset-selector-inner-border-size: $inner-border-size;
+$preset-selector-inner-border-opacity: $inner-border-opacity;
 $preset-selector-shadow-size: 0;
 $preset-selector-shadow-opacity: 0;
 $preset-selector-name-fg-opacity: 1.0;
-$preset-selector-name-bg-opacity: 0.05;
+$preset-selector-name-bg-opacity: $inner-bg-opacity;
 $preset-selector-button-width: 1.5rem;
 $preset-selector-button-fg-opacity: 0.6;
-$preset-selector-button-bg-opacity: 0.05;
+$preset-selector-button-bg-opacity: $inner-bg-opacity;
 $preset-selector-button-fg-opacity-hover: 0.65;
-$preset-selector-button-bg-opacity-hover: 0.1;
+$preset-selector-button-bg-opacity-hover: $inner-bg-opacity-hover;
 $preset-selector-button-fg-opacity-disabled: 0.3;
-$preset-selector-button-bg-opacity-disabled: 0.05;
+$preset-selector-button-bg-opacity-disabled: $inner-bg-opacity-disabled;
 
 // Parameter list
 $param-spacing: 0.25rem;
 $param-padding: 0.5rem;
 $param-inner-spacing: 1rem;
 $param-label-max-width: 50%;
-$param-border-radius: 0.5rem;
+$param-border-radius: 0rem;
 $param-bg-opacity-odd: 0.025;
 $param-bg-opacity-even: 0.0;
 $param-section-header-opacity: 0.7;
 $param-list-scroll-fade: true;
 
 // Mobile Mode™
-$mobile-mode-breakpoint: 768px;
+$mobile-mode-breakpoint: 600px;
 
 // Mobile Mode project selector control
 $project-selector-text-size: $title-text-size;
 $project-selector-padding: 0.5rem;
 $project-selector-outer-border-size: 1px;
-$project-selector-outer-border-opacity: 0.3;
+$project-selector-outer-border-opacity: $inner-border-opacity;
 $project-selector-inner-border-size: 1px;
-$project-selector-inner-border-opacity: 0.3;
+$project-selector-inner-border-opacity: $inner-border-opacity;
 $project-selector-name-fg-opacity: 1.0;
 $project-selector-name-bg-opacity: 0.0;
 $project-selector-button-width: 2rem;

@@ -2,6 +2,7 @@
     "title": "Echoes",
     "date": "2024-04-02",
     "description": "A riff on the Three Body Problem logo, ideal for a circular print.",
+    "groups": ["Paths"],
     "params": {
         "dimensions": {
             "name": "Dimensions",

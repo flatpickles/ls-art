@@ -19,7 +19,7 @@ const overlayPanels = true;
 
 // The default states of the project list and detail panels; these are starting values, which will
 // be updated as the user interacts with the UI (and/or settings panel), and are then persisted.
-const projectListPanelState = PanelState.Visible;
+const projectListPanelState = PanelState.Hidden;
 const projectDetailPanelState = PanelState.Visible;
 
 // Sketchbook redirects root navigation to the first project listed. In this case, you can override

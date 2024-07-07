@@ -2,6 +2,7 @@
     "title": "Organa",
     "date": "2024-06-27",
     "description": "As then begets now, self-reference begets self-reference. The system persists, a beholding unfolding.",
+    "groups": ["Pixels"],
     "params": {
         "timeScale1": {
             "name": "Base Rate",

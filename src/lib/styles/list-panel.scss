@@ -49,8 +49,8 @@ $project-spacing-zero: (
     border-radius: $project-border-radius;
 
     // Set margin & padding and update border depending on full-width setting
-    margin: 0 calc($panel-content-inset / 2);
-    padding: $project-padding calc($panel-content-inset / 2);
+    margin: 0;
+    padding: $project-padding $panel-content-inset;
     @if ($project-full-width) {
         margin: 0;
         padding: $project-padding $panel-content-inset;
