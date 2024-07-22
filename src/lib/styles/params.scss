@@ -36,8 +36,8 @@ $param-input-border-radius: 0.25rem;
 // Param items
 @mixin parameter-item {
     font-size: $medium-text-size;
-    margin: 0 calc($panel-content-inset / 2);
-    padding: $param-padding calc($panel-content-inset / 2);
+    margin: 0;
+    padding: $param-padding $panel-content-inset;
 }
 @mixin parameter-item-even-odd {
     &.even {

@@ -53,7 +53,7 @@ const useFullscreenCanvas = true;
 const defaultCanvasSize = [1080, 1080];
 
 // Show recording controls in the settings panel.
-const showRecordingControls = true;
+const showRecordingControls = dev;
 
 // Anything listed here will appear in the user settings panel with the given label. Values changed
 // in the settings panel will be persisted in local storage, and the values set above will be used
@@ -62,12 +62,12 @@ const withDevSettings: Record<string, string> = dev
     ? { alwaysShowPresets: '[dev] Show Presets' }
     : {};
 export const userSettingsLabels: Record<string, string> = {
+    ...withDevSettings,
     projectSortOrder: 'Project Sorting',
     showExperiments: 'Show Experiments',
-    overlayPanels: 'Overlay Panels',
     useFullscreenCanvas: 'Fullscreen Canvas',
     defaultCanvasSize: 'Default Canvas Size',
-    ...withDevSettings
+    showRecordingControls: 'Show Recording Controls'
 };
 
 // Export all settings for use elsewhere in the app.
