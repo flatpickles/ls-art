@@ -1,7 +1,7 @@
-import { renderPaths } from 'canvas-sketch-util/penplot';
 import alea from 'alea';
-import CanvasSketchProject, { type CanvasSketchProps } from '../util/CanvasSketchProject';
+import { renderPaths } from 'canvas-sketch-util/penplot';
 import { createNoise3D } from 'simplex-noise';
+import CanvasSketchProject, { type CanvasSketchProps } from '../util/CanvasSketchProject';
 import IsolineGrid from './IsolineGrid';
 
 export default class Contours extends CanvasSketchProject {
@@ -11,7 +11,8 @@ export default class Contours extends CanvasSketchProject {
     inset = 0.01; // "Inset", 0.01 to 0.25
     fixedAspect = false; // "Fixed Aspect"
     rounding = 0.32; // "Rounding", 0 to 1
-    easing = 10; // "Edge Weight", 1 to 15
+    easing = 10; // "Edge Weight", 0.01 to 15
+    cutout = 0; // "Cutout", 0 to 1
     noiseScaleX = 0.19; // "Noise Scale X", 0.1 to 1
     noiseScaleY = 0.81; // "Noise Scale Y", 0.1 to 1
     noiseVariant = 0.21; // "Noise Variant", 0 to 1
@@ -40,7 +41,7 @@ export default class Contours extends CanvasSketchProject {
 
                 // Rounded rectangle function
                 const roundedRectSDF = (x: number, y: number, radius: number) => {
-                    // Normalize to [0, 1]
+                    // Normalize to [-1, 1]
                     const width = 1,
                         height = 1;
                     x = x * 2 - 1;
@@ -69,10 +70,18 @@ export default class Contours extends CanvasSketchProject {
                 };
 
                 // Multiply the noise value by eased rounded rectangle SDF
-                let multiplier = roundedRectSDF(x, y, this.rounding);
-                multiplier = sigmoidEasing(multiplier, this.easing);
-                multiplier = Math.max(0, 1 - multiplier * 2);
-                return noiseValue * multiplier;
+                let outsideFactor = roundedRectSDF(x, y, this.rounding);
+                outsideFactor = sigmoidEasing(outsideFactor, this.easing);
+                outsideFactor = Math.max(0, 1 - outsideFactor * 2);
+
+                // Multiply by inside multiplier to remove center (a little sus but works great)
+                let insideFactor = roundedRectSDF(x, y, this.rounding) + 0.5;
+                const cutoutPos = this.cutout * 2 - 1; // Transform 0 to 1 -> -1 to 1
+                const normalizationRange = Math.min(1, 1 - cutoutPos); // cap range at 1
+                insideFactor = (insideFactor - cutoutPos) / normalizationRange;
+                insideFactor = sigmoidEasing(Math.max(0, Math.min(1, insideFactor)), this.easing);
+
+                return noiseValue * outsideFactor * insideFactor;
             };
 
             // Create the generator

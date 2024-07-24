@@ -1,0 +1,22 @@
+{
+    "title": "Esobordica",
+    "values": {
+        "dimensions": [8.5, 11],
+        "layerCount": 10,
+        "edgeLow": 0.05,
+        "edgeHigh": 0.35,
+        "inset": 0.03,
+        "fixedAspect": false,
+        "rounding": 0.15,
+        "easing": 13,
+        "cutout": 0.93,
+        "noiseScaleX": 0.5,
+        "noiseScaleY": 0.5,
+        "noiseVariant": 0.3,
+        "gridResolution": 71,
+        "interpolate": false,
+        "evenSpacing": false,
+        "splineTension": 0,
+        "lineWidth": 0.7
+    }
+}

@@ -9,6 +9,7 @@
         "fixedAspect": false,
         "rounding": 0,
         "easing": 10,
+        "cutout": 0,
         "noiseScaleX": 0.04,
         "noiseScaleY": 0.65,
         "noiseVariant": 0.66,

@@ -1,10 +1,7 @@
 {
     "title": "BM2",
     "values": {
-        "dimensions": [
-            1.5,
-            6
-        ],
+        "dimensions": [1.5, 6],
         "layerCount": 7,
         "edgeLow": 0.05,
         "edgeHigh": 0.87,
@@ -12,6 +9,7 @@
         "fixedAspect": false,
         "rounding": 0,
         "easing": 2.38,
+        "cutout": 0,
         "noiseScaleX": 0.9,
         "noiseScaleY": 0.68,
         "noiseVariant": 0.98,

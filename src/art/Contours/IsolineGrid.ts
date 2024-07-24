@@ -1,6 +1,6 @@
+import type { Path } from 'd3-path';
 import PathUtil from '../util/Legacy/PathUtil';
 import PolylineUtil from '../util/Legacy/PolylineUtil';
-import type { Path } from 'd3-path';
 
 interface GridCorner {
     position: [number, number];
