@@ -12,8 +12,8 @@ uniform float textureScale; // 2.5, 0 to 20
 uniform float textureDepth; // 0.2, 0.0 to 1.0
 uniform float edgeDepth; // 0.25, 0.0 to 1.0
 uniform float contrast; // 4, 0.01 to 5
-uniform vec3 color1; // #ffe999
-uniform vec3 color2; // #0a6b19
+uniform vec3 color1; // #ffd440
+uniform vec3 color2; // #184e20
 
 
 float sigmoidBase(float t, float k) {
