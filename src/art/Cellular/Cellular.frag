@@ -3,10 +3,13 @@ precision highp float;
 uniform float scaledTime;
 uniform vec2 renderSize;
 
-uniform float scale; // 1, 0 to 20
-uniform float noiseScale; // 1, 0 to 20
-uniform vec3 color1;
-uniform vec3 color2; // #ffffff
+uniform float  spaceScale; // 4, 0.5 to 20
+uniform float noiseScale; // 0.1, 0.1 to 5
+uniform float cellScale; // 1, 0.5 to 1
+uniform float textureScale; // 3, 0 to 20
+uniform float contrast; // 2, 0.01 to 4
+uniform vec3 color1; // #ffe999
+uniform vec3 color2; // #194d20
 
 varying vec2 vUv;
 
@@ -16,12 +19,21 @@ vec2 random2( vec2 p ) {
     return fract(sin(vec2(dot(p,vec2(127.1,311.7)),dot(p,vec2(269.5,183.3))))*43758.5453);
 }
 
+float sigmoidBase(float t, float k) {
+	return (1.0 / (1.0 + exp(-k * t))) - 0.5;
+}
+
+float sigmoidEasing(float t, float k) {
+	float correction = 0.5 / sigmoidBase(1.0, k);
+	return correction * sigmoidBase(2.0 * t - 1.0, k) + 0.5;
+}
+
 void main()	{
 	float aspectRatio = float(renderSize.x) / float(renderSize.y);
 	vec2 vUv = vUv;
 	vUv = vUv * 2.0 - 1.;
 	vUv.x *= aspectRatio;
-    vUv *= scale;
+    vUv *=  spaceScale;
 
     // Tile the space
     vec2 i_st = floor(vUv);
@@ -43,18 +55,19 @@ void main()	{
             vec2 diff = neighbor + point - f_st;
 
             // Distance to the point
-            float dist = length(diff);
+            float dist = length(diff) + (1.0 - cellScale);
 
-            // Keep the closer distance
-            finalDist = min(dist, finalDist);
+            // Keep the closer distance (eased by contrast)
+            float eased = sigmoidEasing(dist, contrast);
+            finalDist = min(eased, finalDist);
         }
     }
 
-    // Draw the min distance (distance field)
-    float scale = simplexNoise(vec3(vUv.x, vUv.y, finalDist)) / 2.0 + 1.0;
-    scale *= finalDist;
-
-    vec3 color = mix(color1, color2, scale);
-
+    // Draw the distance field: scaled, tetured, eased
+    float spaceScale = finalDist;
+    spaceScale += (simplexNoise(vec3(vUv.x * textureScale, vUv.y * textureScale, finalDist * textureScale)) / 2.0 + 1.0) * 0.1;
+    
+    // Render final color
+    vec3 color = mix(color1, color2, spaceScale);
     gl_FragColor = vec4(color,1.0);
 }
