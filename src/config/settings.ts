@@ -44,7 +44,7 @@ const alwaysShowPresets = false;
 
 // Allow exporting the current project parameter values in a preset JSON file from the presets UI.
 // These files can be added directly to a project's `presets` directory and used as bundled presets.
-const enablePresetExport = dev;
+const enablePresetExport = true;
 
 // Canvas size can be fullscreen, or fixed to defaultCanvasSize. Projects may specify a canvasSize
 // configuration value to avoid fullscreen rendering and override the defaultCanvasSize. Note that
