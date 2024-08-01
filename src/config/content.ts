@@ -2,12 +2,12 @@
 const title = 'Longitude Studio';
 const subtitle = '';
 const description =
-    'A collection of algorithmic art projects, built with <a href="https://skbk.cc">Sketchbook</a>.';
+    'Algorithmic art by Matt Nichols, built with <a href="https://skbk.cc">Sketchbook</a>.';
 
 // Project list footer content (use empty string to omit)
 const footer = 'Copyright © 2024 <a href="https://flatpickles.com">Matt Nichols</a>';
-const leftButtonIcon = 'fa-brands fa-github';
-const leftButtonLink = 'https://github.com/flatpickles/ls-art';
+const leftButtonIcon = 'fa-solid fa-heart';
+const leftButtonLink = 'https://instagram.com/longitude.studio';
 
 // Show panel buttons (visible when panels are hidden)
 const projectListIcon = 'fa-solid fa-bars';
