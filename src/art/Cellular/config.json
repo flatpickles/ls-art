@@ -5,22 +5,58 @@
     "groups": ["Pixels"],
     "params": {
         "timeScale": {
-            "name": "Movement",
-            "default": 0.1
+            "name": "Cell Motion",
+            "default": 0.25,
+            "section": "Movement"
         },
         "timeScale1": {
             "name": "Lat. Drift",
             "default": 0.0,
             "min": -1.0,
             "max": 1.0,
-            "step": 0.01
+            "step": 0.01,
+            "section": "Movement"
         },
         "timeScale2": {
             "name": "Long. Drift",
             "default": -0.2,
             "min": -1.0,
             "max": 1.0,
-            "step": 0.01
+            "step": 0.01,
+            "section": "Movement"
+        },
+        "spaceScale": {
+            "section": "Space"
+        },
+        "textureDepth": {
+            "section": "Space"
+        },
+        "textureScale": {
+            "section": "Space"
+        },
+        "warpDepth": {
+            "section": "Space"
+        },
+        "warpScale": {
+            "section": "Space"
+        },
+        "noiseScale": {
+            "section": "Space"
+        },
+        "edgeDepth": {
+            "section": "Color"
+        },
+        "easing": {
+            "section": "Color"
+        },
+        "infold": {
+            "section": "Color"
+        },
+        "color1": {
+            "section": "Color"
+        },
+        "color2": {
+            "section": "Color"
         }
     }
 }

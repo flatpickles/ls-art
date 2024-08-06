@@ -1,24 +1,29 @@
 precision highp float;
 
-uniform float scaledTime;
-uniform float scaledTime1;
-uniform float scaledTime2;
 uniform vec2 renderSize;
 varying vec2 vUv;
 
-// todo: groups
+// todo: groups, description, share, etc
 
-uniform float spaceScale; // "Scale", 5, 0.5 to 20
-uniform float textureDepth; // "Texture", 0.2, 0.0 to 1.0
-uniform float textureScale; // "Texture Scale", 2.5, 0 to 20
-uniform float warpDepth; // "Warp", 0.1, 0.0 to 1.0
-uniform float warpScale; // "Warp Scale", 0.1, 0.0 to 1.0
-uniform float edgeDepth; // "Edge", 0.25, 0.0 to 1.0
-uniform float easing; // "Easing", 2, 1 to 5
-uniform float infold; // "Infold", 1.0, 1.0 to 20.0
-uniform float noiseScale; // "Grid", 0.1, 0.01 to 20
+// Motion
+uniform float scaledTime;
+uniform float scaledTime1;
+uniform float scaledTime2;
+
+// Shape
+uniform float spaceScale; // "Zoom", 0.5
+uniform float textureDepth; // "Texture", 0.2
+uniform float textureScale; // "Tex. Detail", 0.1
+uniform float warpDepth; // "Warp", 0.25
+uniform float warpScale; // "Warp Detail", 0.5
+uniform float noiseScale; // "Grid", 0.1
+
+// Color
 uniform vec3 color1; // "Color 1", #ffd440
 uniform vec3 color2; // "Color 2", #184e20
+uniform float edgeDepth; // "Edge", 0.25
+uniform float easing; // "Easing", 0.25
+uniform float infold; // "Infold", 0.0
 
 // SIMPLEX NOISE
 
@@ -118,13 +123,14 @@ float triangleWave(float x, float frequency) {
 // MAIN
 
 void main()	{
+    float cellMotion = scaledTime / 2.0;
 	float aspectRatio = float(renderSize.x) / float(renderSize.y);
 	vec2 vUv = vUv;
 	vUv = vUv * 2.0 - 1.;
 	vUv.x *= aspectRatio;
-    vUv *= spaceScale;
+    vUv *= 10.0 * (1.0 - spaceScale) + 0.5;
     vUv += vec2(scaledTime1, scaledTime2) * 0.25;
-    vUv += noise3Dto2D(vec3(vUv * warpScale, scaledTime)) * warpDepth;
+    vUv += noise3Dto2D(vec3(vUv * warpScale, cellMotion)) * warpDepth;
 
     // Tile the space
     vec2 tileIdx = floor(vUv);
@@ -138,7 +144,7 @@ void main()	{
             vec2 neighbor = vec2(float(x),float(y));
 
             // Calculate point position
-            vec3 noiseInput = vec3((tileIdx + neighbor) / noiseScale, scaledTime);
+            vec3 noiseInput = vec3((tileIdx + neighbor) / (noiseScale * 20.0 + 0.001), cellMotion);
             vec2 point = noise3Dto2D(noiseInput);
 
 			// Vector between the pixel and the point
@@ -162,11 +168,11 @@ void main()	{
     float dScaled = mix(finalDist, relativeDist, edgeDepth);
 
     // Draw the distance field: eased, scaled & textured
-    float dVal = (1.0 - textureDepth / 2.0) + snoise(vec3(vUv.x * textureScale, vUv.y * textureScale, relativeDist * textureScale)) * textureDepth / 2.0;
+    float dVal = (1.0 - textureDepth / 2.0) + snoise(vec3(vUv.x * textureScale, vUv.y * textureScale, relativeDist * textureScale) * 20.0) * textureDepth / 2.0;
     dVal = dScaled * dVal;
-    dVal = sigmoidEasing(dVal, easing);
+    dVal = sigmoidEasing(dVal, easing * 4.0 + 1.0);
 
-    dVal = triangleWave(dVal, infold / 2.0);
+    dVal = triangleWave(dVal, (infold * 10.0 + 1.0) / 2.0);
 
     // Render final color
     vec3 color = mix(color1, color2, dVal);
