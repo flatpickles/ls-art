@@ -6,8 +6,10 @@ uniform float scaledTime2;
 uniform vec2 renderSize;
 varying vec2 vUv;
 
-uniform float  spaceScale; // 5, 0.5 to 20
+uniform float spaceScale; // 5, 0.5 to 20
 uniform float noiseScale; // 0.1, 0.1 to 5
+uniform float warpScale; // 0.1, 0.0 to 1.0
+uniform float warpDepth; // 0.1, 0.0 to 1.0
 uniform float textureScale; // 2.5, 0 to 20
 uniform float textureDepth; // 0.2, 0.0 to 1.0
 uniform float edgeDepth; // 0.25, 0.0 to 1.0
@@ -119,7 +121,8 @@ void main()	{
 	vUv = vUv * 2.0 - 1.;
 	vUv.x *= aspectRatio;
     vUv *= spaceScale;
-    vUv += vec2(scaledTime1, scaledTime2);
+    vUv += vec2(scaledTime1, scaledTime2) * 0.25;
+    vUv += noise3Dto2D(vec3(vUv * warpScale, scaledTime)) * warpDepth;
 
     // Tile the space
     vec2 tileIdx = floor(vUv);
