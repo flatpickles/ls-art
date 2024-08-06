@@ -1,0 +1,19 @@
+{
+    "title": "Borderlens",
+    "values": {
+        "timeScale": 0.25,
+        "timeScale1": 0,
+        "timeScale2": -0.2,
+        "spaceScale": 0.75,
+        "textureDepth": 0.05,
+        "textureScale": 0.25,
+        "warpDepth": 0.5,
+        "warpScale": 0.5,
+        "noiseScale": 1,
+        "color1": [0.8666666666666667, 1, 0.8196078431372549],
+        "color2": [0.16862745098039217, 0, 0.5607843137254902],
+        "edgeDepth": 0.25,
+        "easing": 1,
+        "infold": 0.25
+    }
+}

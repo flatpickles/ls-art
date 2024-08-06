@@ -1,0 +1,27 @@
+{
+    "title": "I Blue It",
+    "values": {
+        "timeScale": 0.25,
+        "timeScale1": 0,
+        "timeScale2": 0.4,
+        "spaceScale": 0.9,
+        "textureDepth": 0.2,
+        "textureScale": 0.3,
+        "warpDepth": 0,
+        "warpScale": 0,
+        "noiseScale": 0,
+        "color1": [
+            0.7411764705882353,
+            0.9490196078431372,
+            1
+        ],
+        "color2": [
+            0,
+            0.06666666666666667,
+            1
+        ],
+        "edgeDepth": 0.5,
+        "easing": 1,
+        "infold": 1
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "title": "Proverbial Ooze",
+    "values": {
+        "timeScale": 0.2,
+        "timeScale1": 0,
+        "timeScale2": 0,
+        "spaceScale": 0.65,
+        "textureDepth": 0,
+        "textureScale": 0,
+        "warpDepth": 1,
+        "warpScale": 1,
+        "noiseScale": 0,
+        "color1": [1, 0.6666666666666666, 0.2],
+        "color2": [0, 0, 0],
+        "edgeDepth": 0.3,
+        "easing": 0.3,
+        "infold": 0
+    }
+}

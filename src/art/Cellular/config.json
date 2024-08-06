@@ -1,8 +1,9 @@
 {
-    "title": "Cellular Jam",
+    "title": "Cellular",
     "date": "2024-07-29",
     "experimental": true,
     "groups": ["Pixels"],
+    "description": "Wandering biology, organized yet whimsical, as are we all.",
     "params": {
         "timeScale": {
             "name": "Cell Motion",
