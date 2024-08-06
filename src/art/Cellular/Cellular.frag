@@ -6,17 +6,19 @@ uniform float scaledTime2;
 uniform vec2 renderSize;
 varying vec2 vUv;
 
-uniform float spaceScale; // 5, 0.5 to 20
-uniform float noiseScale; // 0.1, 0.1 to 5
-uniform float warpScale; // 0.1, 0.0 to 1.0
-uniform float warpDepth; // 0.1, 0.0 to 1.0
-uniform float textureScale; // 2.5, 0 to 20
-uniform float textureDepth; // 0.2, 0.0 to 1.0
-uniform float edgeDepth; // 0.25, 0.0 to 1.0
-uniform float easing; // 4, 0.01 to 5
-uniform float infold; // 1.0, 1.0 to 20.0
-uniform vec3 color1; // #ffd440
-uniform vec3 color2; // #184e20
+// todo: groups
+
+uniform float spaceScale; // "Scale", 5, 0.5 to 20
+uniform float textureDepth; // "Texture", 0.2, 0.0 to 1.0
+uniform float textureScale; // "Texture Scale", 2.5, 0 to 20
+uniform float warpDepth; // "Warp", 0.1, 0.0 to 1.0
+uniform float warpScale; // "Warp Scale", 0.1, 0.0 to 1.0
+uniform float edgeDepth; // "Edge", 0.25, 0.0 to 1.0
+uniform float easing; // "Easing", 2, 1 to 5
+uniform float infold; // "Infold", 1.0, 1.0 to 20.0
+uniform float noiseScale; // "Grid", 0.1, 0.01 to 20
+uniform vec3 color1; // "Color 1", #ffd440
+uniform vec3 color2; // "Color 2", #184e20
 
 // SIMPLEX NOISE
 

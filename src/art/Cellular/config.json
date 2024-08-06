@@ -5,18 +5,18 @@
     "groups": ["Pixels"],
     "params": {
         "timeScale": {
-            "name": "motion",
+            "name": "Movement",
             "default": 0.1
         },
         "timeScale1": {
-            "name": "driftX",
+            "name": "Lat. Drift",
             "default": 0.0,
             "min": -1.0,
             "max": 1.0,
             "step": 0.01
         },
         "timeScale2": {
-            "name": "driftY",
+            "name": "Long. Drift",
             "default": -0.2,
             "min": -1.0,
             "max": 1.0,
