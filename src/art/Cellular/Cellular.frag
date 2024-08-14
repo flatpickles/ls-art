@@ -3,27 +3,24 @@ precision highp float;
 uniform vec2 renderSize;
 varying vec2 vUv;
 
-// todo: groups, description, share, etc
-
 // Motion
 uniform float scaledTime;
 uniform float scaledTime1;
 uniform float scaledTime2;
 
 // Shape
-uniform float spaceScale; // "Zoom", 0.5
-uniform float textureDepth; // "Texture", 0.2
-uniform float textureScale; // "Tex. Detail", 0.1
-uniform float warpDepth; // "Warp", 0.25
-uniform float warpScale; // "Warp Detail", 0.5
-uniform float noiseScale; // "Grid", 0.1
+uniform float spaceScale; // "Magnification", 0.5
+uniform float textureDepth; // "Endomorphosis", 0.2
+uniform float textureScale; // "Microtexture", 0.1
+uniform float warpDepth; // "Liquefaction", 0.25
+uniform float warpScale; // "Turbulence", 0.5
 
 // Color
-uniform vec3 color1; // "Color 1", #ffd440
-uniform vec3 color2; // "Color 2", #184e20
-uniform float edgeDepth; // "Edge", 0.25
-uniform float easing; // "Easing", 0.25
-uniform float infold; // "Infold", 0.0
+uniform vec3 color1; // "Cytoplasm", #ffd440
+uniform vec3 color2; // "Ectoplasm", #184e20
+uniform float edgeDepth; // "Delimitation", 0.25
+uniform float easing; // "Polarity", 0.25
+uniform float infold; // "Endocycling", 0.0
 
 // SIMPLEX NOISE
 
@@ -129,7 +126,7 @@ void main()	{
 	vUv = vUv * 2.0 - 1.;
 	vUv.x *= aspectRatio;
     vUv *= 10.0 * (1.0 - spaceScale) + 0.5;
-    vUv += vec2(scaledTime1, scaledTime2) * 0.25;
+    vUv += vec2(-scaledTime1, scaledTime2) * 0.25;
     vUv += noise3Dto2D(vec3(vUv * warpScale, cellMotion)) * warpDepth;
 
     // Tile the space
@@ -144,7 +141,7 @@ void main()	{
             vec2 neighbor = vec2(float(x),float(y));
 
             // Calculate point position
-            vec3 noiseInput = vec3((tileIdx + neighbor) / (noiseScale * 20.0 + 0.001), cellMotion);
+            vec3 noiseInput = vec3((tileIdx + neighbor), cellMotion);
             vec2 point = noise3Dto2D(noiseInput);
 
 			// Vector between the pixel and the point

@@ -6,58 +6,58 @@
     "description": "Wandering biology, organized yet whimsical, as are we all.",
     "params": {
         "timeScale": {
-            "name": "Cell Motion",
+            "name": "Cellular Flux",
             "default": 0.25,
-            "section": "Movement"
+            "section": "Dynamics"
         },
         "timeScale1": {
-            "name": "Lat. Drift",
+            "name": "Lateral Kinesis",
             "default": 0.0,
             "min": -1.0,
             "max": 1.0,
             "step": 0.01,
-            "section": "Movement"
+            "section": "Dynamics"
         },
         "timeScale2": {
-            "name": "Long. Drift",
+            "name": "Axial Kinesis",
             "default": -0.2,
             "min": -1.0,
             "max": 1.0,
             "step": 0.01,
-            "section": "Movement"
+            "section": "Dynamics"
         },
         "spaceScale": {
-            "section": "Space"
+            "section": "Morphology"
         },
         "textureDepth": {
-            "section": "Space"
+            "section": "Morphology"
         },
         "textureScale": {
-            "section": "Space"
+            "section": "Morphology"
         },
         "warpDepth": {
-            "section": "Space"
+            "section": "Morphology"
         },
         "warpScale": {
-            "section": "Space"
+            "section": "Morphology"
         },
         "noiseScale": {
-            "section": "Space"
+            "section": "Morphology"
         },
         "edgeDepth": {
-            "section": "Color"
+            "section": "Chromatics"
         },
         "easing": {
-            "section": "Color"
+            "section": "Chromatics"
         },
         "infold": {
-            "section": "Color"
+            "section": "Chromatics"
         },
         "color1": {
-            "section": "Color"
+            "section": "Chromatics"
         },
         "color2": {
-            "section": "Color"
+            "section": "Chromatics"
         }
     }
 }

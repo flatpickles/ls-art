@@ -22,7 +22,6 @@ float antialiasedStep(float threshold, float value, float width) {
 }
 
 void main() {
-    // Recalculate noise values and apply proper edge detection
     float aspectRatio = float(renderSize.x) / float(renderSize.y);
     vec2 uv = vUv * 2.0 - 1.0;
     uv.x *= aspectRatio;
@@ -33,9 +32,13 @@ void main() {
     vec3 noiseInput2 = vec3(uv * scale + offset * 2.0, scaledTime);
     vec3 noiseInput3 = vec3(uv * scale + offset * 3.0, scaledTime);
     
-    float noise1 = classicNoise(noiseInput1);
-    float noise2 = classicNoise(noiseInput2);
-    float noise3 = classicNoise(noiseInput3);
+    float noise1 = classicNoise(noiseInput1) / 2.0 + 0.5;
+    float noise2 = classicNoise(noiseInput2) / 2.0 + 0.5;
+    float noise3 = classicNoise(noiseInput3) / 2.0 + 0.5;
+    noise1 = fract(noise1 * 10.0);
+    noise2 = fract(noise2 * 10.0);
+    noise3 = fract(noise3 * 10.0);
+    // still aliasing....
     
     vec3 noiseValues = vec3(noise1, noise2, noise3);
     
@@ -50,7 +53,7 @@ void main() {
         float scaledEdgeWidth = edgeWidth * length(scale);
         float adjustedWidth = scaledEdgeWidth * (gradLen * 2.0 + 0.01);
         
-        gradients[i] = antialiasedStep(threshold, (noiseValues[i] / 2.0 + 0.5), adjustedWidth);
+        gradients[i] = antialiasedStep(threshold, noiseValues[i], adjustedWidth);
     }
     
     gl_FragColor = vec4(gradients, 1.0);
