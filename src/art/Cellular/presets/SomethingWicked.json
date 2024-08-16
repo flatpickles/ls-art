@@ -9,7 +9,6 @@
         "textureScale": 0.75,
         "warpDepth": 0.5,
         "warpScale": 0.3,
-        "noiseScale": 0,
         "color1": [0, 0, 0],
         "color2": [0.9568627450980393, 1, 0.9215686274509803],
         "edgeDepth": 0.3,

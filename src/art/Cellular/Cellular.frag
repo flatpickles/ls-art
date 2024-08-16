@@ -22,6 +22,9 @@ uniform float edgeDepth; // "Delimitation", 0.25
 uniform float easing; // "Polarity", 0.25
 uniform float infold; // "Endocycling", 0.0
 
+// Constants
+const float EPSILON = 1e-6;
+
 // SIMPLEX NOISE
 
 vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
@@ -132,8 +135,8 @@ void main()	{
     // Tile the space
     vec2 tileIdx = floor(vUv);
     vec2 tileUv = fract(vUv);
-    float finalDist = 1.0;
-    float secondDist = 1.0;
+    float finalDistSq = 1.0;
+    float secondDistSq = 1.0;
 
     for (int y= -1; y <= 1; y++) {
         for (int x= -1; x <= 1; x++) {
@@ -144,25 +147,24 @@ void main()	{
             vec3 noiseInput = vec3((tileIdx + neighbor), cellMotion);
             vec2 point = noise3Dto2D(noiseInput);
 
-			// Vector between the pixel and the point
+			// Vector between the pixel and the point, w squared difference
             vec2 diff = neighbor + point - tileUv;
-
-            // Distance to the point
-            float dist = length(diff);
+            float distSq = dot(diff, diff);
 
             // Track two closest distances to the point (for relative calculations)
-            if (dist < finalDist) {
-                secondDist = finalDist;
-                finalDist = dist;
-            } else if (dist < secondDist) {
-                secondDist = dist;
+            // Use epsilon for more stable comparisons
+            if (distSq < finalDistSq - EPSILON) {
+                secondDistSq = finalDistSq;
+                finalDistSq = distSq;
+            } else if (distSq < secondDistSq - EPSILON) {
+                secondDistSq = distSq;
             }
         }
     }
 
-    // Calculate relative distance and normalize
-    float relativeDist = 1.0 - ((secondDist - finalDist) / (secondDist + finalDist)) * 1.0;
-    float dScaled = mix(finalDist, relativeDist, edgeDepth);
+    // Calculate relative distance using squared distances
+    float relativeDist = 1.0 - ((sqrt(secondDistSq) - sqrt(finalDistSq)) / (sqrt(secondDistSq) + sqrt(finalDistSq)));
+    float dScaled = mix(sqrt(finalDistSq), relativeDist, edgeDepth);
 
     // Draw the distance field: eased, scaled & textured
     float dVal = (1.0 - textureDepth / 2.0) + snoise(vec3(vUv.x * textureScale, vUv.y * textureScale, relativeDist * textureScale) * 20.0) * textureDepth / 2.0;
