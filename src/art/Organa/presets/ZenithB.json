@@ -1,0 +1,19 @@
+{
+    "title": "Zenith B",
+    "values": {
+        "blendFactor": 0.97,
+        "warpDepth": 0.01,
+        "baseScale": 6.31,
+        "warpScale": 1.9,
+        "timeScale1": 0.2,
+        "timeScale3": 0.05,
+        "timeScale2": 0.05,
+        "timeScale4": -0.05,
+        "color1": [0.9019607843137255, 0.3568627450980392, 0.42745098039215684],
+        "color2": [0.9803921568627451, 0.8549019607843137, 0.984313725490196],
+        "color3": [0.6392156862745098, 0.5764705882352941, 0.8],
+        "easing": 10.42,
+        "midpoint": 0.5,
+        "rainbow": false
+    }
+}

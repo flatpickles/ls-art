@@ -1,0 +1,19 @@
+{
+    "title": "Zenith C",
+    "values": {
+        "blendFactor": 0.925,
+        "warpDepth": 0.008,
+        "baseScale": 2,
+        "warpScale": 2.79,
+        "timeScale1": 0.12,
+        "timeScale3": 0,
+        "timeScale2": 0.23,
+        "timeScale4": 0.1,
+        "color1": [0.9137254901960784, 0.4549019607843137, 0.18823529411764706],
+        "color2": [0, 0.3411764705882353, 0.2549019607843137],
+        "color3": [0.796078431372549, 0.7215686274509804, 0.9176470588235294],
+        "easing": 2.69,
+        "midpoint": 0.8,
+        "rainbow": false
+    }
+}
