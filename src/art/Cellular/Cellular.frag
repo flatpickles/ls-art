@@ -120,33 +120,44 @@ float triangleWave(float x, float frequency) {
     return 1.0 - abs(2.0 * t - 1.0);
 }
 
+// CELL POSITION
+
+vec2 random2(vec2 p) {
+    return fract(sin(vec2(dot(p,vec2(127.1,311.7)),dot(p,vec2(269.5,183.3))))*43758.5453);
+}
+
+vec2 getCellPoint(vec2 cell, float time) {
+    // getCellPoint runs 9x for each fragment; this approach is cheaper than snoise, and looks fine
+    vec2 randValues = random2(cell);
+    return 0.5 + 0.25 * sin(time * 4.0 + 6.2831 * randValues);
+}
+
 // MAIN
 
 void main()	{
     float cellMotion = scaledTime / 2.0;
-	float aspectRatio = float(renderSize.x) / float(renderSize.y);
-	vec2 vUv = vUv;
-	vUv = vUv * 2.0 - 1.;
-	vUv.x *= aspectRatio;
-    vUv *= 10.0 * (1.0 - spaceScale) + 0.5;
-    vUv += vec2(-scaledTime1, scaledTime2) * 0.25;
-    vUv += noise3Dto2D(vec3(vUv * warpScale, cellMotion)) * warpDepth;
+    float aspectRatio = float(renderSize.x) / float(renderSize.y);
+
+    // Adjust and warp the coordinate system
+    vec2 adjustedUv = vUv;
+    adjustedUv = adjustedUv * 2.0 - 1.;
+    adjustedUv.x *= aspectRatio;
+    adjustedUv *= 10.0 * (1.0 - spaceScale) + 0.5;
+    adjustedUv += vec2(-scaledTime1, scaledTime2) * 0.25;
+    adjustedUv += noise3Dto2D(vec3(adjustedUv * warpScale, cellMotion)) * warpDepth;
 
     // Tile the space
-    vec2 tileIdx = floor(vUv);
-    vec2 tileUv = fract(vUv);
+    vec2 tileIdx = floor(adjustedUv);
+    vec2 tileUv = fract(adjustedUv);
     float finalDistSq = 1.0;
     float secondDistSq = 1.0;
 
-    for (int y= -1; y <= 1; y++) {
-        for (int x= -1; x <= 1; x++) {
-            // Neighbor place in the grid
-            vec2 neighbor = vec2(float(x),float(y));
-
-            // Calculate point position
-            vec3 noiseInput = vec3((tileIdx + neighbor), cellMotion);
-            vec2 point = noise3Dto2D(noiseInput);
-
+    for (int y = -1; y <= 1; y++) {
+        for (int x = -1; x <= 1; x++) {
+            // Calculate point position for this neighbor
+            vec2 neighbor = vec2(float(x), float(y));
+            vec2 point = getCellPoint(tileIdx + neighbor, cellMotion);
+            
 			// Vector between the pixel and the point, w squared difference
             vec2 diff = neighbor + point - tileUv;
             float distSq = dot(diff, diff);
@@ -167,7 +178,7 @@ void main()	{
     float dScaled = mix(sqrt(finalDistSq), relativeDist, edgeDepth);
 
     // Draw the distance field: eased, scaled & textured
-    float dVal = (1.0 - textureDepth / 2.0) + snoise(vec3(vUv.x * textureScale, vUv.y * textureScale, relativeDist * textureScale) * 20.0) * textureDepth / 2.0;
+    float dVal = (1.0 - textureDepth / 2.0) + snoise(vec3(adjustedUv.x * textureScale, adjustedUv.y * textureScale, relativeDist * textureScale) * 20.0) * textureDepth / 2.0;
     dVal = dScaled * dVal;
     dVal = sigmoidEasing(dVal, easing * 4.0 + 1.0);
 
@@ -175,5 +186,5 @@ void main()	{
 
     // Render final color
     vec3 color = mix(color1, color2, dVal);
-    gl_FragColor = vec4(color,1.0);
+    gl_FragColor = vec4(color, 1.0);
 }
