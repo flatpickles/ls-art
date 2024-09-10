@@ -16,8 +16,8 @@ uniform float warpDepth; // "Liquefaction", 0.25
 uniform float warpScale; // "Turbulence", 0.5
 
 // Color
-uniform vec3 color1; // "Cytoplasm", #ffd440
-uniform vec3 color2; // "Ectoplasm", #184e20
+uniform vec3 color1; // "Cytoplasm", #ffc400
+uniform vec3 color2; // "Ectoplasm", #003d09
 uniform float edgeDepth; // "Delimitation", 0.25
 uniform float easing; // "Polarity", 0.25
 uniform float infold; // "Endocycling", 0.0
