@@ -1,7 +1,7 @@
 {
     "title": "Cellular",
-    "date": "2024-07-29",
-    "experimental": true,
+    "date": "2024-09-10",
+    "experimental": false,
     "groups": ["Pixels"],
     "description": "Wandering biology, organized yet whimsical, as are we all.",
     "params": {
