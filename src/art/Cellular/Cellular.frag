@@ -178,7 +178,7 @@ void main()	{
     float dScaled = mix(sqrt(finalDistSq), relativeDist, edgeDepth);
 
     // Draw the distance field: eased, scaled & textured
-    float dVal = (1.0 - textureDepth / 2.0) + snoise(vec3(adjustedUv.x * textureScale, adjustedUv.y * textureScale, relativeDist * textureScale) * 20.0) * textureDepth / 2.0;
+    float dVal = (1.0 - textureDepth / 2.0) + snoise(vec3(adjustedUv.x * textureScale, adjustedUv.y * textureScale, relativeDist * textureScale) * 15.0) * textureDepth / 2.0;
     dVal = dScaled * dVal;
     dVal = sigmoidEasing(dVal, easing * 4.0 + 1.0);
 
