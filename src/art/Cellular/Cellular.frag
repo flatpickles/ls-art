@@ -136,12 +136,12 @@ vec2 getCellPoint(vec2 cell, float time) {
 
 void main()	{
     float cellMotion = scaledTime / 2.0;
-    float aspectRatio = float(renderSize.x) / float(renderSize.y);
+    float aspectRatio = float(renderSize.y) / float(renderSize.x);
 
     // Adjust and warp the coordinate system
     vec2 adjustedUv = vUv;
     adjustedUv = adjustedUv * 2.0 - 1.;
-    adjustedUv.x *= aspectRatio;
+    adjustedUv.y *= aspectRatio;
     adjustedUv *= 10.0 * (1.0 - spaceScale) + 0.5;
     adjustedUv += vec2(-scaledTime1, scaledTime2) * 0.25;
     adjustedUv += noise3Dto2D(vec3(adjustedUv * warpScale, cellMotion)) * warpDepth;
