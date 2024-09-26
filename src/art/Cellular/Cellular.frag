@@ -11,7 +11,7 @@ uniform float scaledTime2;
 // Shape
 uniform float spaceScale; // "Magnification", 0.5
 uniform float textureDepth; // "Endomorphosis", 0.2
-uniform float textureScale; // "Microtexture", 0.1
+uniform float textureScale; // "Microtexture", 0.15
 uniform float warpDepth; // "Liquefaction", 0.25
 uniform float warpScale; // "Turbulence", 0.5
 
@@ -146,22 +146,19 @@ void main()	{
     adjustedUv += vec2(-scaledTime1, scaledTime2) * 0.25;
     adjustedUv += noise3Dto2D(vec3(adjustedUv * warpScale, cellMotion)) * warpDepth;
 
-    // Tile the space
+    // Tile the space & calculate cell distances
     vec2 tileIdx = floor(adjustedUv);
     vec2 tileUv = fract(adjustedUv);
     float finalDistSq = 1.0;
     float secondDistSq = 1.0;
-
     for (int y = -1; y <= 1; y++) {
         for (int x = -1; x <= 1; x++) {
             // Calculate point position for this neighbor
             vec2 neighbor = vec2(float(x), float(y));
             vec2 point = getCellPoint(tileIdx + neighbor, cellMotion);
-            
-			// Vector between the pixel and the point, w squared difference
+            // Vector between the pixel and the point, w squared difference
             vec2 diff = neighbor + point - tileUv;
             float distSq = dot(diff, diff);
-
             // Track two closest distances to the point (for relative calculations)
             // Use epsilon for more stable comparisons
             if (distSq < finalDistSq - EPSILON) {
@@ -181,7 +178,6 @@ void main()	{
     float dVal = (1.0 - textureDepth / 2.0) + snoise(vec3(adjustedUv.x * textureScale, adjustedUv.y * textureScale, relativeDist * textureScale) * 15.0) * textureDepth / 2.0;
     dVal = dScaled * dVal;
     dVal = sigmoidEasing(dVal, easing * 4.0 + 1.0);
-
     dVal = triangleWave(dVal, (infold * 10.0 + 1.0) / 2.0);
 
     // Render final color
