@@ -1,0 +1,11 @@
+{
+    "title": "Limina",
+    "values": {
+        "timeScale": 0.75,
+        "lineCount": 2,
+        "noiseScale": [5, 2],
+        "channelOffset": [0, 0],
+        "timeOffset": 1,
+        "split": [0.1, 0.7, 0.8]
+    }
+}

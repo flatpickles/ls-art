@@ -1,0 +1,11 @@
+{
+    "title": "Tidepools",
+    "values": {
+        "timeScale": 0.1,
+        "lineCount": 21,
+        "noiseScale": [5, 3],
+        "channelOffset": [0.25, 0],
+        "timeOffset": 0,
+        "split": [0, 0, 1]
+    }
+}

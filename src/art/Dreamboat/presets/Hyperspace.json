@@ -1,0 +1,11 @@
+{
+    "title": "Hyperspace",
+    "values": {
+        "timeScale": 0.02,
+        "lineCount": 40,
+        "noiseScale": [0, 4],
+        "channelOffset": [0, 0.5],
+        "timeOffset": 0,
+        "split": [0.5, 0.25, 1.0]
+    }
+}

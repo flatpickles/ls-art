@@ -1,0 +1,11 @@
+{
+    "title": "Cascade",
+    "values": {
+        "timeScale": 0.4,
+        "lineCount": 14,
+        "noiseScale": [5, 1],
+        "channelOffset": [0, 0],
+        "timeOffset": 0.3,
+        "split": [0.3, 0.9, 0.5]
+    }
+}

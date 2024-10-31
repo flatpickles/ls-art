@@ -1,12 +1,12 @@
 {
     "title": "Dreamboat",
-    "date": "2024-09-26",
+    "date": "2024-10-31",
     "experimental": true,
-    "description": "Warpy wavy stuff, loosely inspired by <a href='https://www.instagram.com/p/CZdeT1oL7aU/'>Olfactory</a>.",
+    "description": "Warpy wavy weirdness, top to bottom with a little sauce.",
     "params": {
         "timeScale": {
             "name": "Scaled Time",
-            "default": 0.5
+            "default": 0.3
         }
     }
 }
