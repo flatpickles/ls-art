@@ -24,10 +24,9 @@ float getMask(vec2 uv, float timeOffset) {
 
 void main() {
 	vec2 scaledUv = vUv;
-	// float aspectRatio = float(renderSize.y) / float(renderSize.x);
-	// scaledUv = scaledUv * 2.0 - 1.;
-	// scaledUv.y *= aspectRatio;
-    // scaledUv *= 0.25;
+	float aspectRatio = float(renderSize.y) / float(renderSize.x);
+	scaledUv = scaledUv * 2.0 - 1.;
+    scaledUv *= vec2(0.5, 0.75 * aspectRatio);
 
 	vec2 uvOffset = channelOffset * 0.01;
 	float maskA = getMask(scaledUv, 0.0);
